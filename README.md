@@ -7,9 +7,7 @@
 ### یک پنل تک‌سرویسهٔ VLESS با تم جادوگری  
 **A single‑service VLESS panel with a wizarding theme**
 
-> # ⚠️ **پنل StanNG رایگان و غیر قابل فروش است**
->
-> هرگونه فروش این پنل ممنوع بوده و تخلف محسوب می‌شود.
+> # ⚠️ **پنل StanNG فروشی است**
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
