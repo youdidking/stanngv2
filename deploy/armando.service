@@ -1,0 +1,31 @@
+# نمونه سرویس systemd برای اجرای ربات روی سرور شخصی (VPS)
+# مسیر: /etc/systemd/system/armando.service
+# پس از ویرایش: sudo systemctl daemon-reload && sudo systemctl enable --now armando
+
+[Unit]
+Description=Armando Group Manager (Telegram bot)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=armando
+Group=armando
+WorkingDirectory=/opt/armando
+EnvironmentFile=/opt/armando/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/armando/.venv/bin/python -m app.main
+Restart=always
+RestartSec=10
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# سخت‌گیرانه‌سازی
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=false
+ReadWritePaths=/opt/armando/data /opt/armando/logs
+
+[Install]
+WantedBy=multi-user.target

@@ -1,1 +1,2 @@
-web: bash /app/entrypoint.sh
+worker: python -m app.main
+web: python -m app.main
