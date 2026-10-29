@@ -1,33 +1,34 @@
-# Armando Group Manager - production image (Railway / any container host)
-FROM python:3.12-slim
+FROM alpine:3.20
 
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+# Install runtime dependencies
+RUN apk add --no-cache python3 py3-pip nginx curl unzip jq bash tzdata
+
+# Install build dependencies needed for Pillow and psutil
+RUN apk add --no-cache --virtual .build-deps \
+    gcc musl-dev python3-dev zlib-dev jpeg-dev freetype-dev linux-headers
 
 WORKDIR /app
+COPY requirements.txt .
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends tzdata curl ffmpeg \
- && rm -rf /var/lib/apt/lists/*
+# Install Python dependencies
+RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt \
+    && apk del .build-deps
 
-# Asia/Tehran is the bot default timezone
-RUN ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime \
- && echo "Asia/Tehran" > /etc/timezone
+# Install Xray-core
+RUN curl -fsSL -o xray.zip "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" && \
+    unzip xray.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/xray && \
+    rm xray.zip
 
-COPY requirements.txt ./
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Copy application files
+COPY . /app
 
-COPY . .
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN mkdir -p /app/data /app/logs && useradd -m -u 10001 armando \
- && chown -R armando:armando /app
-USER armando
+# Entrypoint setup
+RUN chmod +x /app/entrypoint.sh
 
-VOLUME ["/app/data"]
+EXPOSE 8000
 
-EXPOSE 8080
-
-HEALTHCHECK --interval=60s --timeout=10s --start-period=20s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:${WEBAPP_PORT:-8080}/health', timeout=5)" || exit 1
-
-CMD ["python", "-m", "app.main"]
+CMD ["/app/entrypoint.sh"]

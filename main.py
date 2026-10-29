@@ -652,7 +652,8 @@ def build_links(request: Request, db, ib) -> dict:
     sni = (db.get("settings") or {}).get("sni_override") or host
     port_tls = 443
 
-    vl_ws_tls = f"vless://{uuidv}@{host}:{port_tls}?encryption=none&security=tls&type=ws&host={quote(host)}&path={quote('/vl-ws', safe='/')}&sni={quote(sni)}&fp={fp}&alpn={quote(alpn, safe=',/')}#{quote(f'StanNG-{name}-VL-WS-TLS')}"
+    vl_ws_tls_remark = f"{name}-WS-TLS-{port_tls}"
+    vl_ws_tls = f"vless://{uuidv}@{host}:{port_tls}?encryption=none&security=tls&type=ws&host={quote(host)}&path={quote('/vl-ws', safe='/')}&sni={quote(sni)}&fp={fp}&alpn={quote(alpn, safe=',/')}#{quote(vl_ws_tls_remark)}"
 
     def make_vmess(port, tls_mode, remark):
         vm_json = {
@@ -663,8 +664,9 @@ def build_links(request: Request, db, ib) -> dict:
         b64 = base64.b64encode(json.dumps(vm_json).encode()).decode()
         return f"vmess://{b64}"
     
-    vm_ws_tls = make_vmess(port_tls, "tls", f"StanNG-{name}-VM-WS-TLS")
-    vl_xh_tls = f"vless://{uuidv}@{host}:{port_tls}?encryption=none&security=tls&type=xhttp&host={quote(host)}&path={quote('/vl-xhttp', safe='/')}&sni={quote(sni)}&fp={fp}&alpn=h2#{quote(f'StanNG-{name}-VL-XHTTP-TLS')}"
+    vm_ws_tls = make_vmess(port_tls, "tls", f"{name}-WS-TLS-{port_tls}")
+    vl_xh_tls_remark = f"{name}-XHTTP-TLS-{port_tls}"
+    vl_xh_tls = f"vless://{uuidv}@{host}:{port_tls}?encryption=none&security=tls&type=xhttp&host={quote(host)}&path={quote('/vl-xhttp', safe='/')}&sni={quote(sni)}&fp={fp}&alpn=h2#{quote(vl_xh_tls_remark)}"
 
     st = inbound_status(ib)
     quota_gb = ib.get("quota_gb") or 0
@@ -672,15 +674,11 @@ def build_links(request: Request, db, ib) -> dict:
     quota_txt = f"{used_gb:.2f}/{quota_gb:g}GB" if quota_gb > 0 else f"{used_gb:.2f}GB used"
     days_txt = f"{st['days_left']}d left" if ib.get("expire_at") else "no expiry"
     status_remark = f"📊 {quota_txt} | ⏳ {days_txt}"
-    free_remark = "StanNG Multi-Protocol ❤️"
 
     dummy_uuid_status = "00000000-0000-0000-0000-000000000001"
-    dummy_uuid_credit = "00000000-0000-0000-0000-000000000002"
     dummy_link_status = f"vless://{dummy_uuid_status}@127.0.0.1:10001?encryption=none&security=none&type=tcp&headerType=none#{quote(status_remark)}"
-    dummy_link_credit = f"vless://{dummy_uuid_credit}@127.0.0.1:10002?encryption=none&security=none&type=tcp&headerType=none#{quote(free_remark)}"
     info_configs = [
         {"remark": status_remark, "link": dummy_link_status, "kind": "status"},
-        {"remark": free_remark, "link": dummy_link_credit, "kind": "credit"},
     ]
 
     all_links = [vl_ws_tls, vm_ws_tls, vl_xh_tls]
@@ -753,8 +751,7 @@ async def sub_plain(uid: str, request: Request):
         "subscription-userinfo": user_info_header,
         "Profile-Update-Interval": "1",
         "profile-update-interval": "1",
-        # تغییر زیر اعمال شده است:
-        "Profile-Title": "base64:2YHZhNi02YUgU3Rhbk5HINeo2YXYs9in2YUg2YHZg9in2YUg2YHZhiDYsdmF2KfbjCDZiNiv2YbYqg==",
+        "Profile-Title": f"base64:{base64.b64encode(ib['name'].encode()).decode()}",
         "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
         "Pragma": "no-cache",
         "Expires": "0",

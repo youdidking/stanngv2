@@ -1,33 +1,10 @@
-# Armando Group Manager - dependencies
-# Python 3.12+ (see runtime.txt)
-
-# Telegram framework
-aiogram==3.31.0
-Telethon==1.45.0
-
-# Instagram: public anonymous extractors; no Instagram login is required by default
-gallery-dl==1.32.17
-yt-dlp==2026.8.19
-parth-dl @ https://github.com/parthmax2/parth-dl/archive/2444a3ecd7f8f5d3865164295d9ea54c1b888acf.tar.gz
-
-# Database: SQLAlchemy 2.x (async) + SQLite driver
-SQLAlchemy==2.0.36
-aiosqlite==0.20.0
-greenlet==3.1.1
-
-# Postgres driver (optional: only needed when DATABASE_URL points at Postgres)
-asyncpg==0.30.0
-
-# HTTP: webhook server + market/price providers
-aiohttp==3.11.10
-
-# Offline visual moderation: NudeNet (ONNX CPU) + animated image decoding
-nudenet==3.4.2
-Pillow==11.3.0
-
-# Persian calendar (jalali dates)
-jdatetime==5.0.0
-
-# .env support
-python-dotenv==1.0.1
-
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+websockets==13.1
+httpx==0.27.2
+psutil>=6.1.0
+qrcode==7.4.2
+Pillow>=10.4.0
+itsdangerous==2.2.0
+python-multipart==0.0.12
+Jinja2==3.1.4
