@@ -11,7 +11,8 @@ from pathlib import Path
 
 from .config import settings
 
-LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
+# تغییر مسیر به پوشه موقت /tmp برای جلوگیری از ارور Read-only file system
+LOG_DIR = Path("/tmp")
 SECRET_PATTERNS = [
     re.compile(r"\d{8,12}:[A-Za-z0-9_-]{30,}"),  # telegram bot token
     re.compile(r"sk-[A-Za-z0-9._-]{16,}"),
