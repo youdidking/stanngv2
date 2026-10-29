@@ -4,7 +4,7 @@ import subprocess
 import asyncio
 import logging
 
-XRAY_CONFIG_PATH = "/tmp/config.json"
+XRAY_CONFIG_PATH = "/usr/local/bin/config.json"
 XRAY_BIN = "/usr/local/bin/xray"
 
 xray_process = None

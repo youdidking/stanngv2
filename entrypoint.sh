@@ -1,28 +1,17 @@
 #!/bin/bash
 
-echo "=== Starting Entrypoint ==="
-export STANNG_DATA_DIR="/tmp/data"
-export XRAY_CONFIG_PATH="/tmp/config.json"
-export LOG_FILE_ENABLED=false
-export PORT="${PORT:-8000}"
+# Set default port if not provided by Railway / Render
+PORT="${PORT:-8000}"
 
-echo "Hostless PORT is: $PORT"
+# Panel internal port
+export PANEL_PORT="${PANEL_PORT:-10000}"
 
-# ساخت پوشه‌های Nginx در /tmp
-mkdir -p /tmp/nginx/logs /tmp/nginx/client_body /tmp/nginx/proxy /tmp/nginx/fastcgi /tmp/nginx/uwsgi /tmp/nginx/scgi
+# Update nginx.conf port dynamically (supports both template and repeated runs)
+sed -i -E "s/listen [0-9]+;|listen NGINX_PORT;/listen ${PORT};/g" /etc/nginx/nginx.conf
 
-# کپی و اصلاح کانفیگ Nginx
-cp /app/nginx.conf /tmp/nginx.conf
-sed -i "s/NGINX_PORT/${PORT}/g" /tmp/nginx.conf
+# Stop any previous Nginx instance if running, then start fresh
+nginx -s stop 2>/dev/null || true
+nginx
 
-echo "=== Starting Nginx ==="
-nginx -c /tmp/nginx.conf
-if [ $? -eq 0 ]; then
-    echo "✅ Nginx started successfully on port $PORT"
-else
-    echo "❌ Nginx FAILED to start!"
-fi
-
-echo "=== Starting Python Panel ==="
-# پایتون روی پورت 10000 اجرا میشه تا Nginx ترافیک رو بهش بفرسته
-exec uvicorn main:app --host 127.0.0.1 --port 10000
+# Start Python Panel in foreground
+exec python3 main.py
