@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: stanng
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PORT
+        value: 8000
+    autoDeploy: true
