@@ -6,6 +6,13 @@ PORT="${PORT:-8000}"
 # Panel internal port
 export PANEL_PORT="${PANEL_PORT:-10000}"
 
+# ==========================================
+# ADDED TO FIX READ-ONLY FILE SYSTEM ERROR
+export LOG_FILE_ENABLED=false
+export DATABASE_URL="sqlite:////tmp/stanng.db"
+export DB_PATH="/tmp/stanng.db"
+# ==========================================
+
 # Update nginx.conf port dynamically (supports both template and repeated runs)
 sed -i -E "s/listen [0-9]+;|listen NGINX_PORT;/listen ${PORT};/g" /etc/nginx/nginx.conf
 
