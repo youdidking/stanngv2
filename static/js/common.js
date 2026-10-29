@@ -17,7 +17,7 @@ const STANNG = (() => {
   const audioCache = {};
   let soundEnabled = localStorage.getItem('stanng_sound') !== 'off';
 
-  function playSfx(name, vol = 0.4) {
+  function playSfx(name, vol = 0.5) {
     if (!soundEnabled) return;
     try {
       const src = SFX[name];
@@ -208,41 +208,6 @@ const STANNG = (() => {
     toast, api, initRipples, attachRipple, initSparkles,
     setLoading, shake, fmtBytes, fmtDuration,
   };
-})();
-
-
-
-/* Parham delegated interaction feedback: presentation-only, no navigation/API interception. */
-(() => {
-  let audioCtx = null;
-  const interactive = 'button, a, [role="button"], [role="menuitem"], [role="tab"], [role="option"], summary, [onclick], .btn, .icon-btn, .nav-item, .menu-item, .menu-link, .tab, .action, .clickable';
-  function beep(kind) {
-    try {
-      if (typeof soundEnabled !== 'undefined' && !soundEnabled) return;
-      audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-      const now = audioCtx.currentTime;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'square';
-      osc.frequency.setValueAtTime(kind === 'soft' ? 520 : 760, now);
-      osc.frequency.exponentialRampToValueAtTime(kind === 'soft' ? 390 : 1180, now + .055);
-      gain.gain.setValueAtTime(kind === 'soft' ? .028 : .045, now);
-      gain.gain.exponentialRampToValueAtTime(.0001, now + .075);
-      osc.connect(gain).connect(audioCtx.destination);
-      osc.start(now); osc.stop(now + .08);
-    } catch (_) {}
-  }
-  document.addEventListener('pointerdown', e => {
-    const el = e.target.closest?.(interactive);
-    if (!el || el.disabled || el.closest('.no-click-fx')) return;
-    const checkbox = el.matches('input[type="checkbox"], input[type="radio"]') || !!el.querySelector?.('input[type="checkbox"], input[type="radio"]');
-    beep(checkbox ? 'soft' : 'normal');
-    el.classList.remove('parham-clicked');
-    void el.offsetWidth;
-    el.classList.add('parham-clicked');
-    setTimeout(() => el.classList.remove('parham-clicked'), 220);
-  }, { passive: true });
 })();
 
 document.addEventListener('DOMContentLoaded', () => {

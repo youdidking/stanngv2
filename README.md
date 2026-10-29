@@ -1,17 +1,20 @@
-
 <div align="center">
 
-<img src="static/img/logo-square.png" width="110" alt="Parham logo">
+<img src="static/img/logo-square.png" width="110" alt="StanNG logo">
 
-# ⚡ Parham v1.5.5
+# ⚡ StanNG v1.5.5
 
 ### یک پنل تک‌سرویسهٔ VLESS با تم جادوگری  
 **A single‑service VLESS panel with a wizarding theme**
 
+> # ⚠️ **پنل StanNG رایگان و غیر قابل فروش است**
+>
+> هرگونه فروش این پنل ممنوع بوده و تخلف محسوب می‌شود.
+
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
-<img src="docs/screenshots/login.jpg" width="720" alt="Parham login screen">
+<img src="docs/screenshots/login.jpg" width="720" alt="StanNG login screen">
 
 </div>
 
@@ -96,8 +99,8 @@
 
 ### 💻 اجرای محلی
 ```bash
-git clone https://github.com/<your-username>/Parham.git
-cd Parham
+git clone https://github.com/<your-username>/StanNG.git
+cd StanNG
 pip install -r requirements.txt
 python main.py
 # → http://localhost:8000/setup
@@ -163,5 +166,4 @@ python main.py
 
 ---
 
-<div align="center">**Parham** — ساده، سبک، و جادویی 🧙‍♂️</div>
-```
+<div align="center">**StanNG** — ساده، سبک، و جادویی 🧙‍♂️</div>

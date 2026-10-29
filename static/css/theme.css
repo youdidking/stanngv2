@@ -184,12 +184,12 @@ p {
   padding: 24px;
   background:
     linear-gradient(180deg, rgba(11, 8, 23, 0.55), rgba(11, 8, 23, 0.86)),
-    url('/static/img/parham-hero-red.jpg') center/cover no-repeat scroll;
+    url('/static/img/hero-bg.jpg') center/cover no-repeat scroll;
 }
 html[data-theme="light"] .auth-shell {
   background:
     linear-gradient(180deg, rgba(243, 239, 228, 0.72), rgba(243, 239, 228, 0.92)),
-    url('/static/img/parham-hero-red.jpg') center/cover no-repeat scroll;
+    url('/static/img/hero-bg.jpg') center/cover no-repeat scroll;
 }
 @media (min-width: 921px) {
   .auth-shell {
@@ -753,93 +753,4 @@ textarea.input {
     width: 24px;
     height: 24px;
   }
-}
-
-/* ===========================================================
-   PARHAM VISUAL OVERRIDES — presentation only
-   No scroll/container behavior is modified here.
-   =========================================================== */
-:root {
-  --bg-0: #050507;
-  --bg-1: #0b0b0e;
-  --bg-2: #121216;
-  --bg-3: #1a1518;
-  --surface: rgba(255, 255, 255, 0.035);
-  --surface-strong: rgba(255, 255, 255, 0.065);
-  --border-soft: rgba(225, 32, 48, 0.22);
-  --border-strong: rgba(225, 32, 48, 0.48);
-  --gold-100: #ffd7db;
-  --gold-300: #ff6574;
-  --gold-500: #e11d32;
-  --gold-700: #a70f20;
-  --gold-glow: rgba(225, 29, 50, 0.32);
-  --amethyst: #ef3348;
-  --amethyst-d: #b81229;
-  --azure: #ff4d5f;
-  --azure-d: #c7192e;
-  --text-0: #f7f4f4;
-  --text-1: #d9d1d3;
-  --text-2: #aa9ea1;
-  --text-muted: #776c70;
-  --font-fa: 'Rajdhani', 'Vazirmatn', sans-serif;
-  --font-en: 'Rajdhani', 'Vazirmatn', sans-serif;
-  --font-display: 'Rajdhani', 'Vazirmatn', sans-serif;
-}
-
-body {
-  background:
-    radial-gradient(900px 650px at 12% 8%, rgba(225, 29, 50, .18), transparent 62%),
-    radial-gradient(850px 620px at 88% 88%, rgba(120, 0, 16, .20), transparent 60%),
-    linear-gradient(135deg, #030304 0%, #100609 34%, #050507 67%, #16070a 100%);
-  background-size: 400% 400%;
-  animation: parham-bg-shift 13s ease-in-out infinite;
-}
-@keyframes parham-bg-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-::selection { background: rgba(225,29,50,.42); color: #fff; }
-::-webkit-scrollbar-thumb { background: rgba(225,29,50,.48); }
-::-webkit-scrollbar-thumb:hover { background: #e11d32; }
-
-button, a, .nav-item, summary, [role="button"], [role="menuitem"],
-.btn, .icon-btn, .badge, .pill, .win {
-  transition: transform 150ms ease, filter 150ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
-}
-.btn, .icon-btn, .nav-item, .badge, .pill, .win, .auth-card {
-  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
-}
-.btn:hover, .icon-btn:hover, .nav-item:hover { filter: brightness(1.08); }
-.btn:active, .icon-btn:active, .nav-item:active, [role="button"]:active { transform: scale(.97); }
-.input:focus, select.input:focus, textarea.input:focus {
-  border-color: rgba(225,29,50,.7);
-  box-shadow: 0 0 0 3px rgba(225,29,50,.13), 0 0 22px rgba(225,29,50,.12);
-}
-input[type="checkbox"], input[type="radio"] { accent-color: #e11d32; }
-.sidebar-brand .name, .brand-title, .topbar h1 { color: var(--gold-300); text-shadow: 0 0 16px rgba(225,29,50,.28); }
-
-/* QR scan — visual-only pseudo element; does not affect layout/scroll. */
-.qr-box { position: relative; overflow: hidden; }
-.qr-box::after {
-  content: "";
-  position: absolute;
-  left: 6px; right: 6px; top: 8px;
-  height: 2px;
-  background: #ef3348;
-  box-shadow: 0 0 7px 1px rgba(239,51,72,.75);
-  animation: parham-qr-scan 2.4s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes parham-qr-scan {
-  0%, 100% { transform: translateY(0); opacity: .35; }
-  50% { transform: translateY(164px); opacity: 1; }
-}
-
-/* delegated click feedback */
-.parham-clicked { animation: parham-click .19s ease-out; }
-@keyframes parham-click {
-  0% { transform: scale(1); }
-  45% { transform: scale(.965); }
-  100% { transform: scale(1); }
 }
