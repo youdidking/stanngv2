@@ -1,0 +1,1379 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>NIGHTLINE — پنل مدیریت اشتراک و تونل کلادفلر</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141210'/%3E%3Cpath d='M8 23V9h3l6 8.4V9h3v14h-3l-6-8.4V23z' fill='%23e9e5da'/%3E%3C/svg%3E">
+<style>{{STYLE}}</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ─────────── BESPOKE MONOCHROME VECTOR ICON SPRITE (ZERO EMOJIS) ─────────── -->
+<svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="m9.78 18.65.28-4.23 7.71-6.93c.34-.31-.07-.46-.53-.18l-9.52 6.05-4.12-1.29c-.89-.28-.9-.89.2-1.33l16.08-6.2c.73-.32 1.44.18 1.17 1.4l-2.74 12.72c-.19.91-.75 1.13-1.51.71l-4.24-3.14-2.05 1.97c-.23.23-.43.43-.73.45Z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="M12 12l6.3-6.3"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 19c-7 0-11-7-11-7a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 7 11 7a18.5 18.5 0 0 1-2.16 3.19"/><path d="M1 1l22 22"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14.5 14.5 0 0 1 0 18 14.5 14.5 0 0 1 0-18z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M4 15l4-5 4 3 5-7 3 3"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-11"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><path d="M12 2v10"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2"/><path d="M17 6l3 3M14 9l2 2"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="7" rx="1"/><rect x="2" y="14" width="20" height="7" rx="1"/><path d="M6 6.5h.01M6 17.5h.01"/></symbol>
+  <symbol id="i-trace-solid" viewBox="0 0 24 24"><path d="M2 14h3.5l2.5-6 4 10 3-7 2.5 3H22"/></symbol>
+  <symbol id="i-trace-dash" viewBox="0 0 24 24"><path d="M2 12h3M8 12h3M14 12h3M20 12h2"/><circle cx="6.5" cy="12" r="1"/><circle cx="18.5" cy="12" r="1"/></symbol>
+  <symbol id="i-bar-hatch" viewBox="0 0 24 24"><rect x="3" y="10" width="4.5" height="10"/><rect x="9.75" y="4" width="4.5" height="16"/><rect x="16.5" y="13" width="4.5" height="7"/><path d="M9.8 9.5l4.4-4.4M9.8 14.5l4.4-4.4M9.8 19.5l4.4-4.4"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 13l3.5-3.5"/><circle cx="12" cy="13" r="1.4"/></symbol>
+  <symbol id="i-cloud-up" viewBox="0 0 24 24"><path d="M12 16V5"/><path d="M8 9l4-4 4 4"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.8h.01"/></symbol>
+</svg>
+
+<!-- ─────────── OFFICIAL FREE & NON-COMMERCIAL POPUP NOTICE ─────────── -->
+<div class="modal-backdrop" id="free-notice-modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="fn-title">
+    <p class="kicker">
+      <svg class="ic"><use href="#i-shield"/></svg>
+      <span class="fa">اطلاعیهٔ رسمی و دائمی — NIGHTLINE V{{VERSION}}</span>
+      <span class="en">OFFICIAL NOTICE — NIGHTLINE V{{VERSION}}</span>
+    </p>
+    <h2 class="head" id="fn-title" style="font-size:21px;margin-top:4px">
+      <span class="fa">این سرویس کاملاً رایگان و غیرقابل فروش است</span>
+      <span class="en">100% Free &amp; Open-Source — Strictly Not For Sale</span>
+    </h2>
+    <p class="labor" style="margin-top:10px">
+      <span class="fa">پروژهٔ <strong>NIGHTLINE</strong> یک نرم‌افزار آزاد، رایگان و متن‌باز (Open-Source) است. هرگونه خرید و فروش سورس، پنل یا لینک‌های اشتراک این سرویس اکیداً ممنوع بوده و اگر هزینه‌ای بابت آن پرداخت کرده‌اید، فروشنده از یک ابزار رایگان سوءاستفاده کرده است.</span>
+      <span class="en"><strong>NIGHTLINE</strong> is a 100% free and open-source project. Selling access, panels, or subscriptions built with this software is strictly prohibited.</span>
+    </p>
+    <div class="actions" style="justify-content:flex-end;margin-top:16px">
+      <button class="btn primary" id="btn-free-close" type="button">
+        <svg class="ic"><use href="#i-check"/></svg>
+        <span class="fa">متوجه شدم — ورود به پنل</span><span class="en">I UNDERSTAND — CONTINUE</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── COMPACT CLOUDFLARE DAILY REQUEST QUOTA & TOKEN MODAL ─────────── -->
+<div class="modal-backdrop" id="cf-modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="cf-modal-title" style="max-width:520px;position:relative">
+    <div class="stat-strip">
+      <p class="kicker" style="margin:0">
+        <svg class="ic"><use href="#i-gauge"/></svg>
+        <span class="fa">سهمیهٔ روزانهٔ درخواست‌های کلادفلر</span>
+        <span class="en">CLOUDFLARE DAILY REQUEST QUOTA</span>
+      </p>
+      <button class="mini" id="btn-cf-close" type="button" style="width:30px;height:30px" title="Close">
+        <svg class="ic ic-sm"><use href="#i-x"/></svg>
+      </button>
+    </div>
+
+    <h3 class="head" id="cf-modal-title" style="font-size:18px;margin-top:6px">
+      <span class="fa">پایش مصرف روزانه و اتصال توکن API</span>
+      <span class="en">Daily Account Quota &amp; API Token Setup</span>
+    </h3>
+
+    <div class="cf-quota-box" id="cf-quota-card">
+      <div class="stat-strip" style="font-size:12px">
+        <span class="mono" id="cf-modal-nums">0 / 100,000 (0%)</span>
+        <button class="blur-btn" id="btn-cf-refresh" type="button">
+          <svg class="ic ic-sm"><use href="#i-refresh"/></svg>
+          <span class="fa">بروزرسانی آمار</span><span class="en">REFRESH</span>
+        </button>
+      </div>
+      <div class="meter" style="margin-top:7px"><i id="cf-modal-bar" style="width:0%"></i></div>
+      <div class="stat-strip" style="margin-top:6px;font-size:11px;color:var(--ink-faint)">
+        <span id="cf-modal-acc"><span class="fa">اکانت متصل نشده است</span><span class="en">Token not configured</span></span>
+        <span class="mono" id="cf-modal-reset">UTC 00:00</span>
+      </div>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="stat-strip" style="margin-bottom:5px">
+        <label class="fld-label" for="cf-inp-token" style="margin:0">
+          <span class="fa">توکن API کلادفلر (Cloudflare API Token)</span>
+          <span class="en">CLOUDFLARE API TOKEN</span>
+        </label>
+        <div class="cf-help-links">
+          <a class="inline-link" href="https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22account_analytics%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22account_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22workers_scripts%22%2C%22type%22%3A%22edit%22%7D%5D&amp;accountId=*&amp;zoneId=all&amp;name=NIGHTLINE%20Analytics%20and%20Self-Update" target="_blank" rel="noopener noreferrer" id="cf-template-quick">
+            <span class="fa">تمپلیت آمادهٔ توکن آماری</span><span class="en">PRE-FILLED COMPLETE TOKEN</span>
+            <svg class="ic ic-sm"><use href="#i-external"/></svg>
+          </a>
+          <span>·</span>
+          <button class="inline-link-btn" id="btn-cf-guide-pop" type="button">
+            <svg class="ic ic-sm"><use href="#i-info"/></svg>
+            <span class="fa">دسترسی‌های موردنیاز</span><span class="en">Required Permissions</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mini Compact Popup Guide for Token Permissions -->
+      <div class="perm-popover" id="cf-perm-popover" hidden>
+        <div class="stat-strip" style="margin-bottom:6px">
+          <strong style="font-size:12px">
+            <span class="fa">تمپلیت کامل توکن کلادفلر</span>
+            <span class="en">Pre-filled Cloudflare Token Templates</span>
+          </strong>
+          <button class="inline-link-btn" id="btn-cf-guide-close" type="button">
+            <svg class="ic ic-sm"><use href="#i-x"/></svg>
+          </button>
+        </div>
+        <p class="hint" style="margin:0 0 8px"><span class="fa">روی یکی از تمپلیت‌های رسمی Cloudflare بزنید. دسترسی‌ها از قبل پر شده‌اند؛ حساب مورد نظر را در داشبورد انتخاب کنید، مجوزها را مرور و تأیید کنید و توکنِ نمایش‌داده‌شده را فقط خودتان در کادر زیر وارد کنید. هیچ توکنی از داشبورد به‌صورت خودکار به پنل منتقل نمی‌شود.</span><span class="en">Open an official pre-filled Cloudflare template. Select your account, review permissions and confirm in your own dashboard; copy the displayed token here yourself. No token is silently sent back to this panel.</span></p>
+        <div class="token-templates">
+          <a class="btn ghost sm-btn" id="cf-template-read" href="https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22account_analytics%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22account_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22workers_scripts%22%2C%22type%22%3A%22edit%22%7D%5D&amp;accountId=*&amp;zoneId=all&amp;name=NIGHTLINE%20Analytics%20and%20Self-Update" target="_blank" rel="noopener noreferrer"><svg class="ic ic-sm"><use href="#i-key"/></svg><span class="fa">تمپلیت کامل: آمار، تنظیمات و ویرایش Worker</span><span class="en">COMPLETE TOKEN TEMPLATE</span><svg class="ic ic-sm"><use href="#i-external"/></svg></a>
+          <a class="btn ghost sm-btn" id="cf-template-update" href="https://dash.cloudflare.com/profile/api-tokens?permissionGroupKeys=%5B%7B%22key%22%3A%22account_analytics%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22account_settings%22%2C%22type%22%3A%22read%22%7D%2C%7B%22key%22%3A%22workers_scripts%22%2C%22type%22%3A%22edit%22%7D%5D&amp;accountId=*&amp;zoneId=all&amp;name=NIGHTLINE%20Analytics%20and%20Self-Update" target="_blank" rel="noopener noreferrer"><svg class="ic ic-sm"><use href="#i-cloud-up"/></svg><span class="fa">تمپلیت کامل با مجوز آپدیت Worker</span><span class="en">COMPLETE TEMPLATE + WORKER UPDATE</span><svg class="ic ic-sm"><use href="#i-external"/></svg></a>
+        </div>
+        <p class="hint" style="margin:9px 0 6px"><span class="fa">مجوزهای داخل تمپلیت:</span><span class="en">Permissions preselected by the template:</span></p>
+        <ul class="perm-list">
+          <li><code>Account · Account Analytics · Read</code> — <span class="fa">الزامی برای خواندن آمار روزانه</span><span class="en">Required for daily request count</span></li>
+          <li><code>Account · Account Settings · Read</code> — <span class="fa">تشخیص خودکار شناسه اکانت</span><span class="en">Auto-detect Account ID</span></li>
+          <li><code>Account · Workers Scripts · Edit</code> — <span class="fa">اختیاری (جهت آپدیت خودکار پنل از گیت‌هاب)</span><span class="en">Optional (for in-panel GitHub self-update)</span></li>
+        </ul>
+        <div style="margin-top:6px;font-size:11px">
+          <a class="inline-link" href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/" target="_blank" rel="noopener">
+            <span class="fa">مستندات رسمی دسترسی‌های توکن کلادفلر</span><span class="en">Official Cloudflare API Token Permissions Docs</span>
+            <svg class="ic ic-sm"><use href="#i-external"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <input id="cf-inp-token" type="password" dir="ltr" autocomplete="off" placeholder="Paste Cloudflare API Token...">
+    </div>
+
+    <div class="field-grid" style="margin-top:10px">
+      <div>
+        <label class="fld-label" for="cf-inp-script"><span class="fa">نام ورکر (خودکار)</span><span class="en">WORKER NAME (AUTO)</span></label>
+        <input id="cf-inp-script" type="text" dir="ltr" autocomplete="off" placeholder="auto-detected">
+      </div>
+      <div>
+        <label class="fld-label" for="cf-inp-limit"><span class="fa">سقف روزانه درخواست</span><span class="en">DAILY REQUEST LIMIT</span></label>
+        <input id="cf-inp-limit" type="number" min="1000" step="1000" value="100000">
+      </div>
+    </div>
+
+    <div id="cf-verify-msg" hidden></div>
+
+    <div class="actions" style="justify-content:space-between;margin-top:14px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn sm-btn" id="btn-cf-verify" type="button">
+          <svg class="ic ic-sm"><use href="#i-radar"/></svg>
+          <span class="fa">بررسی اتصال توکن</span><span class="en">VERIFY TOKEN</span>
+        </button>
+        <button class="btn primary sm-btn" id="btn-cf-save" type="button">
+          <svg class="ic ic-sm"><use href="#i-check"/></svg>
+          <span class="fa">ذخیره و فعال‌سازی</span><span class="en">SAVE &amp; ENABLE</span>
+        </button>
+      </div>
+      <button class="btn ghost sm-btn" id="btn-cf-clear" type="button" hidden>
+        <svg class="ic ic-sm"><use href="#i-trash"/></svg>
+        <span class="fa">حذف توکن</span><span class="en">REMOVE</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── HARDCODED GITHUB REPO UPDATE & SELF-UPDATER MODAL ─────────── -->
+<div class="modal-backdrop" id="gh-modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="gh-modal-title" style="max-width:520px">
+    <div class="stat-strip">
+      <p class="kicker" style="margin:0">
+        <svg class="ic"><use href="#i-cloud-up"/></svg>
+        <span class="fa">بروزرسانی هسته از مخزن رسمی گیت‌هاب</span>
+        <span class="en">OFFICIAL GITHUB UPDATE &amp; SELF-DEPLOY</span>
+      </p>
+      <button class="mini" id="btn-gh-close" type="button" style="width:30px;height:30px" title="Close">
+        <svg class="ic ic-sm"><use href="#i-x"/></svg>
+      </button>
+    </div>
+
+    <h3 class="head" id="gh-modal-title" style="font-size:18px;margin-top:6px">
+      <span class="fa">بررسی و نصب مستقیم بروزرسانی در پنل</span>
+      <span class="en">Check &amp; Apply Updates Directly In-Panel</span>
+    </h3>
+
+    <table class="specs" style="margin-top:8px">
+      <tbody>
+        <tr>
+          <th><span class="fa">مخزن رسمی</span><span class="en">REPOSITORY</span></th>
+          <td>
+            <a class="inline-link mono" href="https://github.com/youdidking/NightLine" target="_blank" rel="noopener">
+              github.com/youdidking/NightLine
+              <svg class="ic ic-sm"><use href="#i-external"/></svg>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th><span class="fa">نسخهٔ فعلی پنل</span><span class="en">INSTALLED</span></th>
+          <td class="mono" id="gh-cur-ver">V{{VERSION}}</td>
+        </tr>
+        <tr>
+          <th><span class="fa">آخرین نسخهٔ گیت‌هاب</span><span class="en">LATEST REMOTE</span></th>
+          <td>
+            <span class="mono" id="gh-rem-ver">—</span>
+            <span class="badge" id="gh-status-badge" style="margin-inline-start:6px">
+              <span class="fa">آماده بررسی</span><span class="en">READY</span>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pre class="gh-notes" id="gh-notes-box" hidden></pre>
+
+    <div style="margin-top:10px">
+      <div class="stat-strip" style="margin-bottom:4px">
+        <label class="fld-label" for="gh-inp-script" style="margin:0">
+          <span class="fa">نام ورکر مقصد در کلادفلر (حفظ کامل KV و مشترکین)</span>
+          <span class="en">TARGET WORKER NAME (PRESERVES KV &amp; USERS)</span>
+        </label>
+        <button class="inline-link-btn" id="btn-gh-open-cf" type="button">
+          <svg class="ic ic-sm"><use href="#i-key"/></svg>
+          <span id="gh-token-hint"><span class="fa">تنظیم توکن کلادفلر</span><span class="en">Configure CF Token</span></span>
+        </button>
+      </div>
+      <input id="gh-inp-script" type="text" dir="ltr" autocomplete="off" placeholder="nightline-worker">
+    </div>
+
+    <div id="gh-msg" hidden></div>
+
+    <div class="actions" style="justify-content:space-between;margin-top:14px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn sm-btn" id="btn-gh-check" type="button">
+          <svg class="ic ic-sm" id="gh-check-ic"><use href="#i-refresh"/></svg>
+          <span class="fa">بررسی نسخهٔ جدید</span><span class="en">CHECK GITHUB</span>
+        </button>
+        <button class="btn primary sm-btn" id="btn-gh-apply" type="button">
+          <svg class="ic ic-sm"><use href="#i-cloud-up"/></svg>
+          <span class="fa">بروزرسانی مستقیم پنل</span><span class="en">SELF-UPDATE NOW</span>
+        </button>
+      </div>
+      <a class="btn ghost sm-btn" id="gh-dl-link" href="https://github.com/youdidking/NightLine/releases" target="_blank" rel="noopener">
+        <svg class="ic ic-sm"><use href="#i-external"/></svg>
+        <span class="fa">صفحهٔ انتشار</span><span class="en">RELEASES</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ───────────────────────────── masthead ───────────────────────────── -->
+  <header class="masthead">
+    <div class="topline">
+      <span class="tick">EDITION V{{VERSION}}</span>
+      <span class="bar"></span>
+      <span class="tick" id="top-edge">COLO · —</span>
+      <span class="mid-tick">/</span>
+      <span class="bar"></span>
+      <button class="sw" id="btn-free-info" type="button" title="اطلاعیه رایگان بودن">
+        <svg class="ic ic-sm"><use href="#i-shield"/></svg>
+        <span class="fa">رایگان و غیرقابل فروش</span><span class="en">FREE · NOT FOR SALE</span>
+      </button>
+      <button class="sw" id="lang" type="button" title="Language">EN</button>
+      <div class="theme-grp" role="group" aria-label="Theme">
+        <button class="sw t-pick" data-th="light" type="button" title="تم روشن"><svg class="ic ic-sm"><use href="#i-sun"/></svg></button>
+        <button class="sw t-pick" data-th="dark" type="button" title="تم دارک"><svg class="ic ic-sm"><use href="#i-moon"/></svg></button>
+      </div>
+    </div>
+
+    <h1 class="mast-title" id="mast-title">NIGHTLINE</h1>
+
+    <div class="subline">
+      <span class="fa">پنلِ اشتراک، مسیریابی و ضدّ فیلترِ VLESS و Trojan روی شبکهٔ ابری کلادفلر</span>
+      <span class="en">Serverless VLESS, Trojan &amp; Telegram Proxy Desk on Cloudflare Network</span>
+      <span class="mono sm" id="mode-pill">FREE &amp; OPEN · V{{VERSION}}</span>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>VLESS + TROJAN WS</span><span>TELEGRAM WEB PROXY</span><span>FRAGMENT 1-1 &amp; TLSHELLO</span><span>PRIVATE DoH</span><span>MULTI-USER KV</span><span>CLEAN IP SCANNER</span><span>SMART ISP ADVISOR</span><span>100% FREE · NOT FOR SALE</span>
+        <span>VLESS + TROJAN WS</span><span>TELEGRAM WEB PROXY</span><span>FRAGMENT 1-1 &amp; TLSHELLO</span><span>PRIVATE DoH</span><span>MULTI-USER KV</span><span>CLEAN IP SCANNER</span><span>SMART ISP ADVISOR</span><span>100% FREE · NOT FOR SALE</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="free-ribbon" style="margin-top:12px">
+    <svg class="ic"><use href="#i-shield"/></svg>
+    <span class="fa"><strong>این سرویس کاملاً رایگان و غیرقابل فروش است</strong> — پروژهٔ آزاد و متن‌باز NIGHTLINE (نسخهٔ V{{VERSION}})</span>
+    <span class="en"><strong>100% FREE &amp; STRICTLY NOT FOR SALE</strong> — Open-Source NIGHTLINE Project (V{{VERSION}})</span>
+  </div>
+
+  <!-- ───────── VISITOR CONNECTION IDENTITY & IP BLUR STRIP ───────── -->
+  <section class="conn-strip" id="visitor-strip" aria-label="Visitor Connection Identity">
+    <div class="conn-cell">
+      <span class="conn-lbl">
+        <svg class="ic ic-sm"><use href="#i-globe"/></svg>
+        <span class="fa">آدرس IP شما</span><span class="en">YOUR IP ADDRESS</span>
+      </span>
+      <div class="conn-val-row">
+        <span class="conn-val mono blur-val" id="visitor-ip" dir="ltr">—</span>
+        <button class="blur-btn" id="btn-ip-blur" type="button" title="مخفی / نمایش IP">
+          <svg class="ic ic-sm" id="ip-blur-icon"><use href="#i-eye-off"/></svg>
+          <span id="ip-blur-lbl">BLUR</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="conn-cell">
+      <span class="conn-lbl">
+        <svg class="ic ic-sm"><use href="#i-compass"/></svg>
+        <span class="fa">کشور و موقعیت</span><span class="en">COUNTRY &amp; REGION</span>
+      </span>
+      <div class="conn-val-row">
+        <span class="conn-val" id="visitor-country">—</span>
+        <span class="badge mono" id="visitor-iso">—</span>
+      </div>
+    </div>
+
+    <div class="conn-cell">
+      <span class="conn-lbl">
+        <svg class="ic ic-sm"><use href="#i-server"/></svg>
+        <span class="fa">اپراتور / رسانندهٔ اینترنت</span><span class="en">ISP / OPERATOR</span>
+      </span>
+      <div class="conn-val-row">
+        <span class="conn-val" id="visitor-isp">—</span>
+        <span class="mono sm" id="visitor-asn" style="opacity:.7"></span>
+      </div>
+    </div>
+
+    <div class="conn-cell">
+      <span class="conn-lbl">
+        <svg class="ic ic-sm"><use href="#i-radar"/></svg>
+        <span class="fa">لبهٔ کلادفلر و مشاور شبکه</span><span class="en">EDGE POP &amp; ADVISOR</span>
+      </span>
+      <div class="conn-val-row" style="justify-content:space-between;width:100%">
+        <span class="conn-val mono" id="visitor-colo">COLO · —</span>
+        <button class="blur-btn" id="btn-jump-advisor" type="button">
+          <svg class="ic ic-sm"><use href="#i-radar"/></svg>
+          <span class="fa">مشاور اینترنت</span><span class="en">ISP TEST</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest slot when Smart Advisor is opened before login -->
+  <div id="guest-advisor-slot" hidden style="margin-bottom:14px"></div>
+
+  <!-- ═════════════════════ VIEW 1: FIRST-RUN KV SETUP ════════════════════ -->
+  <section id="v-setup" hidden>
+    <div class="cols">
+      <div class="card">
+        <p class="kicker"><svg class="ic"><use href="#i-key"/></svg><span class="fa">راه‌اندازیِ نخستین شماره</span><span class="en">FIRST EDITION SETUP</span></p>
+        <h2 class="head">
+          <span class="fa">افتتاحِ پنل بدونِ متغیرِ محیطی</span>
+          <span class="en">Open the Night Desk — Zero Env Vars</span>
+        </h2>
+        <p class="labor">
+          <span class="fa">فضای ذخیره‌سازی <code>KV</code> با موفقیت متصل است. یک رمز عبور برای پنل مدیریت انتخاب کن تا نخستین مشترک (VLESS + Trojan)، لینک اشتراک هوشمند و تنظیمات ضد فیلتر به طور خودکار ساخته شوند.</span>
+          <span class="en">Cloudflare <code>KV</code> storage is connected. Choose an admin password to mint your first VLESS + Trojan subscriber, anti-DPI fragment profile, and Private DoH endpoint.</span>
+        </p>
+
+        <form id="f-setup" class="card-fill">
+          <div class="stack" style="margin-top:6px;gap:10px">
+            <div>
+              <label class="fld-label" for="setup-pass"><span class="fa">رمز عبورِ مدیر پنل (حداقل ۶ نویسه)</span><span class="en">ADMIN PASSWORD (MIN 6 CHARS)</span></label>
+              <input id="setup-pass" type="password" autocomplete="new-password" required minlength="6" placeholder="••••••••">
+            </div>
+            <div>
+              <label class="fld-label" for="setup-name"><span class="fa">نامِ مشترک اول</span><span class="en">FIRST SUBSCRIBER NAME</span></label>
+              <input id="setup-name" class="fa-inp" type="text" value="سردبیر (اصلی)">
+            </div>
+            <div>
+              <label class="fld-label" for="setup-uuid"><span class="fa">شناسهٔ UUID دلخواه (اختیاری — خالی بگذار تا خودکار بسازد)</span><span class="en">OPTIONAL CUSTOM UUID (LEAVE BLANK TO AUTO-MINT)</span></label>
+              <div class="fld">
+                <input id="setup-uuid" dir="ltr" type="text" placeholder="auto-generate">
+                <button class="mini" id="setup-gen-uuid" type="button" title="Mint UUID"><svg class="ic"><use href="#i-refresh"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <div class="actions mt-auto">
+            <button class="btn primary" type="submit">
+              <svg class="ic"><use href="#i-check"/></svg>
+              <span class="fa">افتتاحِ تحریریه و ورود به پنل</span><span class="en">INITIALIZE &amp; ENTER PANEL</span>
+            </button>
+          </div>
+          <p class="err" id="setup-err" hidden></p>
+        </form>
+      </div>
+
+      <div class="card card-subtle">
+        <p class="kicker"><svg class="ic"><use href="#i-sliders"/></svg><span class="fa">امکاناتِ نسخهٔ کامل</span><span class="en">WHAT THIS DESK RUNS</span></p>
+        <table class="specs" style="flex:1">
+          <tbody>
+            <tr><th><span class="fa">پروتکل‌های همزمان</span><span class="en">PROTOCOLS</span></th><td class="mono">VLESS + Trojan WS</td></tr>
+            <tr><th><span class="fa">پروکسی تلگرام</span><span class="en">TELEGRAM</span></th><td class="mono">tg://webproxy (MTProto)</td></tr>
+            <tr><th><span class="fa">مدیریت مشترکین</span><span class="en">MULTI-USER</span></th><td class="mono">GB Quota · Expiry · First-Use</td></tr>
+            <tr><th><span class="fa">ضد فیلتر (DPI)</span><span class="en">ANTI-DPI</span></th><td class="mono">Fragment (1-1 / tlshello)</td></tr>
+            <tr><th><span class="fa">مشاور هوشمند شبکه</span><span class="en">ISP ADVISOR</span></th><td class="mono">Live Probe + Auto-Config</td></tr>
+            <tr><th><span class="fa">خروجیِ اشتراک</span><span class="en">SUB CORES</span></th><td class="mono">Xray · Sing-box · Mihomo</td></tr>
+            <tr><th><span class="fa">رفعِ بلاک کلادفلر</span><span class="en">OUTBOUND</span></th><td class="mono">ProxyIP · NAT64 · Chain</td></tr>
+            <tr><th><span class="fa">سرور DNS خصوصی</span><span class="en">PRIVATE DoH</span></th><td class="mono">/dns-query/&lt;token&gt;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ VIEW 2: LOGIN GATE ══════════════════════════ -->
+  <section id="v-login" hidden>
+    <div class="cols">
+      <div class="card">
+        <p class="kicker"><svg class="ic"><use href="#i-lock"/></svg><span class="fa">ورودِ سردبیر</span><span class="en">EDITOR'S CREDENTIALS</span></p>
+        <h2 class="head" style="font-size:26px">
+          <span class="fa">اتاقِ فرمانِ NIGHTLINE</span>
+          <span class="en">Enter the Night Desk</span>
+        </h2>
+        <p class="labor">
+          <span class="fa">برای مدیریتِ مشترکین، IPهای تمیز، Fragment و قوانین مسیریابی، رمزِ عبورِ مدیر را وارد کن.</span>
+          <span class="en">Enter the administrator password to manage subscribers, Clean IPs, Fragment, and routing rules.</span>
+        </p>
+        <form id="f-login" class="card-fill">
+          <div>
+            <label class="fld-label" for="login-pass"><span class="fa">رمز عبورِ مدیریت</span><span class="en">ADMIN PASSWORD</span></label>
+            <input id="login-pass" type="password" autocomplete="current-password" required placeholder="••••••••">
+          </div>
+          <div class="actions mt-auto">
+            <button class="btn primary" type="submit">
+              <svg class="ic"><use href="#i-key"/></svg>
+              <span class="fa">ورود به پنل مدیریت</span><span class="en">SIGN IN TO DESK</span>
+            </button>
+          </div>
+          <p class="err" id="login-err" hidden></p>
+        </form>
+      </div>
+
+      <div class="card card-subtle">
+        <p class="kicker"><svg class="ic"><use href="#i-qr"/></svg><span class="fa">گیشهٔ مشترکین</span><span class="en">SUBSCRIBER WINDOW</span></p>
+        <p class="labor">
+          <span class="fa">اگر مشترک هستی و توکن اشتراک داری، بدون نیاز به رمزِ مدیر می‌توانی کارتِ اشتراک، حجم باقی‌مانده و کدهای QR خودت را ببینی:</span>
+          <span class="en">Hold a subscriber pass token? Open your personal Press Pass for QR codes, remaining GB, and one-tap client links:</span>
+        </p>
+        <div class="mt-auto">
+          <label class="fld-label" for="sub-jump-inp"><span class="fa">توکن اشتراک یا UUID</span><span class="en">SUBSCRIPTION TOKEN OR UUID</span></label>
+          <div class="fld">
+            <input id="sub-jump-inp" dir="ltr" type="text" placeholder="e.g. k8m2x9p4q7w3n5r2">
+            <button class="btn ghost sm-btn" id="sub-jump-btn" type="button">
+              <span class="fa">مشاهده</span><span class="en">OPEN</span>
+              <svg class="ic ic-sm"><use href="#i-external"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <figure class="figure">
+      {{SKYLINE}}
+      <figcaption>
+        <span class="fa">خیابانِ چهل‌ودوم، نیمه‌شب — تصویرِ تلگرافیِ دفترِ نیویورک</span>
+        <span class="en">Forty-Second Street at midnight — wire photo from the New York desk</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ═══════════════ VIEW 3: STATELESS / KV NOT BOUND GUIDE ══════════════ -->
+  <section id="v-stateless" hidden>
+    <aside class="notice warn-box">
+      <p class="notice-title">
+        <svg class="ic"><use href="#i-alert"/></svg>
+        <span class="fa">چرا متغیر و Bindings قفل بود یا KV هنوز وصل نیست؟ (راهنمای ۶۰ ثانیه‌ای)</span>
+        <span class="en">STORAGE NOT BOUND YET — 60-SECOND CLOUDFLARE KV SETUP</span>
+      </p>
+      <p class="fa">
+        در داشبورد جدید کلادفلر، اگر در بخش Workers گزینهٔ <strong>Upload assets</strong> را بزنی، کلادفلر یک ورکرِ «فقط فایل ثابت» می‌سازد و پیغام می‌دهد <em>Variables/Bindings cannot be added to a Worker that only has static assets</em>. برای فعال‌سازیِ پنل کاملِ NIGHTLINE (چندکاربره و بدون نیاز به متغیر محیطی):
+      </p>
+      <ol class="fa">
+        <li>در منوی چپ کلادفلر به <strong>Storage &amp; Databases → KV</strong> برو، دکمهٔ <strong>Create</strong> را بزن و یک فضا به نام <code>nightline</code> بساز.</li>
+        <li>به <strong>Workers &amp; Pages → Create</strong> برو، گزینهٔ <strong>Start with Hello World!</strong> را بزن و <strong>Deploy</strong> کن.</li>
+        <li>روی دکمهٔ <strong>Edit code</strong> (بالا راست) کلیک کن، کل کد فایل <code>worker-single-file.js</code> را جایگزین کد قبلی کن و <strong>Deploy</strong> بزن.</li>
+        <li>در صفحهٔ ورکر به <strong>Settings → Bindings → Add binding → KV namespace</strong> برو، در کادر Variable name دقیقاً بنویس <code>KV</code>، فضای <code>nightline</code> را انتخاب کن و <strong>Save</strong> بزن.</li>
+        <li>همین صفحه را رفرش کن — فرم انتخاب رمز مدیر باز می‌شود و دیگر هیچ متغیری لازم نداری!</li>
+      </ol>
+      <ol class="en">
+        <li>In Cloudflare Dashboard, open <strong>Storage &amp; Databases → KV → Create</strong> and name it <code>nightline</code>.</li>
+        <li>Open <strong>Workers &amp; Pages → Create → Start with Hello World! → Deploy</strong> (do <em>not</em> use Workers "Upload assets", which creates a static-only Worker).</li>
+        <li>Click <strong>Edit code</strong>, paste the entire contents of <code>worker-single-file.js</code>, and click <strong>Deploy</strong>.</li>
+        <li>Go to <strong>Settings → Bindings → Add binding → KV namespace</strong>, set Variable name to <code>KV</code>, select <code>nightline</code>, and save. Refresh this page!</li>
+      </ol>
+    </aside>
+
+    <div class="cols">
+      <div class="card">
+        <p class="kicker"><svg class="ic"><use href="#i-qr"/></svg><span class="fa">چاپِ بلیتِ تک‌کاربره (حالت بدون KV)</span><span class="en">STATELESS SINGLE-TICKET MODE</span></p>
+        <p class="labor">
+          <span class="fa">اگر نخواهی KV وصل کنی و فقط یک متغیرِ <code>uuid</code> در Settings ست کرده‌ای، همان شناسه را اینجا وارد کن تا لینک و QR چاپ شود:</span>
+          <span class="en">Running stateless with a <code>uuid</code> secret instead of KV? Paste that UUID below to print your VLESS URI and QR code:</span>
+        </p>
+        <div class="fld">
+          <input id="sl-uuid" dir="ltr" type="text" placeholder="00000000-0000-4000-8000-000000000000">
+          <button class="mini" id="sl-mint" type="button" title="Mint UUID"><svg class="ic"><use href="#i-refresh"/></svg></button>
+        </div>
+        <div id="sl-box" style="margin-top:14px" hidden>
+          <div class="qr-center"><div class="qrbox"><div class="qr" id="sl-qr"></div></div></div>
+          <div class="actions" style="justify-content:center">
+            <button class="btn primary sm-btn" id="sl-copy" type="button"><svg class="ic ic-sm"><use href="#i-copy"/></svg><span class="fa">کپی لینک VLESS</span><span class="en">COPY VLESS URI</span></button>
+            <a class="btn ghost sm-btn" id="sl-sub" href="#" target="_blank"><span class="fa">لینک اشتراک</span><span class="en">SUBSCRIPTION</span><svg class="ic ic-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-subtle">
+        <p class="kicker"><svg class="ic"><use href="#i-server"/></svg><span class="fa">وضعیتِ فعلیِ لبه</span><span class="en">RUNTIME DIAGNOSTICS</span></p>
+        <table class="specs" style="flex:1">
+          <tbody>
+            <tr><th><span class="fa">حالتِ اجرا</span><span class="en">RUNTIME MODE</span></th><td class="mono" id="diag-mode">STATELESS</td></tr>
+            <tr><th><span class="fa">اتصال KV</span><span class="en">KV BINDING</span></th><td class="mono" id="diag-kv">NOT BOUND</td></tr>
+            <tr><th><span class="fa">متغیر UUID</span><span class="en">ENV UUID</span></th><td class="mono" id="diag-uuid">—</td></tr>
+            <tr><th><span class="fa">دیتاسنتر کلادفلر</span><span class="en">EDGE COLO</span></th><td class="mono" id="diag-edge">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════ VIEW 4: FULL ADMIN PANEL ══════════════════════ -->
+  <section id="v-admin" hidden>
+    <a class="sponsor-float" id="sponsor-telegram" href="https://t.me/BlueKnight_Net" target="_blank" rel="noopener noreferrer" aria-label="Telegram sponsor · BlueKnight_Net" title="Telegram · @BlueKnight_Net">
+      <svg class="ic sponsor-float-icon" aria-hidden="true"><use href="#i-telegram"/></svg>
+      <span class="sponsor-live" aria-hidden="true"></span>
+      <span class="sponsor-float-tip" aria-hidden="true">@BlueKnight_Net</span>
+    </a>
+
+    <!-- Status Ledger Bar -->
+    <div class="ledger-bar">
+      <div class="ledger-items">
+        <span><span class="fa">دیتاسنتر:</span><span class="en">COLO:</span> <b id="st-edge">—</b></span>
+        <span>·</span>
+        <span>KV: <b id="st-kv">OK</b></span>
+        <span>·</span>
+        <span>USERS: <b id="st-users">0</b></span>
+        <span>·</span>
+        <span>TRAFFIC: <b id="st-traffic">0 B</b></span>
+        <span id="demo-badge" class="badge bad" hidden>DEMO PREVIEW</span>
+      </div>
+      <div class="ledger-actions">
+        <!-- Compact Cloudflare Daily Request Limit Progress Pill -->
+        <button class="quota-pill" id="btn-cf-quota" type="button" title="Cloudflare Daily Request Quota & Token">
+          <svg class="ic ic-sm"><use href="#i-gauge"/></svg>
+          <span class="quota-lbl"><span class="fa">سقف روزانه CF</span><span class="en">CF DAILY</span></span>
+          <span class="mini-meter" aria-hidden="true"><i id="cf-mini-bar" style="width:0%"></i></span>
+          <b class="mono" id="cf-mini-txt">TOKEN</b>
+        </button>
+
+        <!-- Compact Hardcoded GitHub Updater Pill -->
+        <button class="quota-pill" id="btn-gh-updater" type="button" title="github.com/youdidking/NightLine">
+          <svg class="ic ic-sm"><use href="#i-cloud-up"/></svg>
+          <span class="quota-lbl"><span class="fa">بروزرسانی</span><span class="en">UPDATE</span></span>
+          <b class="mono" id="gh-mini-ver">V{{VERSION}}</b>
+          <span class="upd-dot" id="gh-upd-dot" hidden>NEW</span>
+        </button>
+
+        <button class="btn danger sm-btn" id="btn-kill" type="button">
+          <svg class="ic ic-sm"><use href="#i-power"/></svg>
+          <span class="fa" id="kill-fa">قطع اضطراری: خاموش</span>
+          <span class="en" id="kill-en">KILL SWITCH: OFF</span>
+        </button>
+        <button class="btn ghost sm-btn" id="btn-logout" type="button">
+          <svg class="ic ic-sm"><use href="#i-lock"/></svg>
+          <span class="fa">خروج</span><span class="en">LOGOUT</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 6 Editorial Section Tabs -->
+    <nav class="nav-tabs" aria-label="Panel Sections">
+      <button class="tab-btn active" data-tab="sub" type="button">
+        <span class="tab-lbl"><svg class="ic ic-sm"><use href="#i-qr"/></svg><span class="fa">پیشخوان و اشتراک</span><span class="en">DISPATCH &amp; SUB</span></span>
+        <span class="tnum">01</span>
+      </button>
+      <button class="tab-btn" data-tab="users" type="button">
+        <span class="tab-lbl"><svg class="ic ic-sm"><use href="#i-users"/></svg><span class="fa">مشترکین</span><span class="en">SUBSCRIBERS</span></span>
+        <span class="tnum">02</span>
+      </button>
+      <button class="tab-btn" data-tab="net" type="button">
+        <span class="tab-lbl"><svg class="ic ic-sm"><use href="#i-bolt"/></svg><span class="fa">شبکه و Fragment</span><span class="en">NET &amp; FRAGMENT</span></span>
+        <span class="tnum">03</span>
+      </button>
+      <button class="tab-btn" data-tab="route" type="button">
+        <span class="tab-lbl"><svg class="ic ic-sm"><use href="#i-globe"/></svg><span class="fa">مسیریابی و DoH</span><span class="en">ROUTING &amp; DoH</span></span>
+        <span class="tnum">04</span>
+      </button>
+      <button class="tab-btn" data-tab="advisor" type="button">
+        <span class="tab-lbl"><svg class="ic ic-sm"><use href="#i-radar"/></svg><span class="fa">مشاور هوشمند</span><span class="en">ISP ADVISOR</span></span>
+        <span class="tnum">05</span>
+      </button>
+      <button class="tab-btn" data-tab="sec" type="button">
+        <span class="tab-lbl"><svg class="ic ic-sm"><use href="#i-shield"/></svg><span class="fa">استتار و پشتیبان</span><span class="en">STEALTH &amp; BACKUP</span></span>
+        <span class="tnum">06</span>
+      </button>
+    </nav>
+
+    <!-- ─────────────── TAB 1: DISPATCH, LIVE CHART & SUBSCRIPTIONS ─────────────── -->
+    <div class="tab-pane" id="pane-sub">
+
+      <!-- Dynamic Theme-Native Monochrome Telemetry & Usage Chart -->
+      <div class="card telemetry-card">
+        <div class="telemetry-head">
+          <p class="kicker" style="margin:0">
+            <svg class="ic"><use href="#i-chart"/></svg>
+            <span class="fa">تلگرافِ زندهٔ سرعت، پینگ و مصرف مشترکین</span>
+            <span class="en">LIVE TELEMETRY, THROUGHPUT &amp; SUBSCRIBER QUOTA</span>
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+            <div class="seg-grp" role="group" aria-label="Chart Mode">
+              <button class="seg-btn active" id="chart-mode-live" type="button">
+                <svg class="ic ic-sm"><use href="#i-chart"/></svg>
+                <span class="fa">نوسان‌نگار سرعت و پینگ</span><span class="en">LIVE SPEED &amp; RTT</span>
+              </button>
+              <button class="seg-btn" id="chart-mode-usage" type="button">
+                <svg class="ic ic-sm"><use href="#i-bars"/></svg>
+                <span class="fa">نمودار مصرف مشترکین</span><span class="en">SUBSCRIBER USAGE</span>
+              </button>
+            </div>
+            <button class="btn ghost sm-btn" id="btn-speed-burst" type="button">
+              <svg class="ic ic-sm" id="speed-burst-ic"><use href="#i-bolt"/></svg>
+              <span class="fa">تست سرعت لحظه‌ای</span><span class="en">BURST SPEED TEST</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="telemetry-kpis">
+          <div class="kpi-box">
+            <span><span class="fa">پینگ لبهٔ ورکر</span><span class="en">EDGE PING (RTT)</span></span>
+            <b id="kpi-rtt">— ms</b>
+          </div>
+          <div class="kpi-box">
+            <span><span class="fa">نوسان خط (جیتر)</span><span class="en">LINE JITTER</span></span>
+            <b id="kpi-jitter">— ms</b>
+          </div>
+          <div class="kpi-box">
+            <span><span class="fa">نرخ انتقال لبه</span><span class="en">EDGE THROUGHPUT</span></span>
+            <b id="kpi-speed">— Mbps</b>
+          </div>
+          <div class="kpi-box">
+            <span><span class="fa">کل مصرف ثبت‌شده</span><span class="en">TOTAL CONSUMED</span></span>
+            <b id="kpi-total-bw">0 B</b>
+          </div>
+        </div>
+
+        <div class="chart-stage">
+          <canvas id="telemetry-canvas" width="960" height="176" aria-label="Monochrome Telemetry Chart"></canvas>
+        </div>
+
+        <div class="chart-foot">
+          <div class="chart-legend" id="chart-legend-live">
+            <span class="leg-item">
+              <svg class="ic ic-sm"><use href="#i-trace-solid"/></svg>
+              <span class="fa">خط ممتد: نرخ انتقال (Mbps)</span>
+              <span class="en">Solid: Edge Throughput (Mbps)</span>
+            </span>
+            <span class="leg-sep" aria-hidden="true">·</span>
+            <span class="leg-item">
+              <svg class="ic ic-sm"><use href="#i-trace-dash"/></svg>
+              <span class="fa">خط نقطه‌چین: زمان پاسخ لبهٔ کلادفلر (ms)</span>
+              <span class="en">Dashed: Cloudflare Edge RTT (ms)</span>
+            </span>
+          </div>
+          <div class="chart-legend" id="chart-legend-usage" hidden>
+            <span class="leg-item">
+              <svg class="ic ic-sm"><use href="#i-bar-hatch"/></svg>
+              <span class="fa">نمودار ستونیِ هاشورخوردهٔ مصرف و سقف حجم هر مشترک</span>
+              <span class="en">Hatched quota &amp; usage bars per subscriber</span>
+            </span>
+          </div>
+          <span class="mono sm" id="chart-sample-lbl">SAMPLES · 0</span>
+        </div>
+      </div>
+
+      <div class="cols">
+        <div class="card">
+          <div class="stat-strip" style="margin-bottom:10px">
+            <p class="kicker" style="margin:0"><svg class="ic"><use href="#i-users"/></svg><span class="fa">کارتِ اشتراکِ مشترک</span><span class="en">SUBSCRIBER PRESS PASS</span></p>
+            <button class="btn ghost sm-btn" id="go-add-user" type="button">
+              <svg class="ic ic-sm"><use href="#i-plus"/></svg>
+              <span class="fa">مشترک جدید</span><span class="en">NEW USER</span>
+            </button>
+          </div>
+
+          <label class="fld-label" for="sel-user"><span class="fa">انتخابِ مشترک</span><span class="en">ACTIVE SUBSCRIBER</span></label>
+          <select id="sel-user" class="fa-sel"></select>
+
+          <div class="specs" style="margin-top:10px">
+            <table class="specs">
+              <tbody>
+                <tr><th><span class="fa">وضعیتِ خط</span><span class="en">STATUS</span></th><td id="u-status-cell">—</td></tr>
+                <tr><th><span class="fa">مصرفِ ترافیک</span><span class="en">BANDWIDTH</span></th><td class="mono" id="u-bw-cell">—</td></tr>
+                <tr><th><span class="fa">مهلتِ اعتبار</span><span class="en">EXPIRY</span></th><td id="u-exp-cell">—</td></tr>
+                <tr><th><span class="fa">شناسهٔ VLESS</span><span class="en">VLESS UUID</span></th><td class="mono" style="font-size:11px;word-break:break-all" id="u-uuid-cell">—</td></tr>
+                <tr><th><span class="fa">رمزِ Trojan</span><span class="en">TROJAN PASS</span></th><td class="mono" id="u-tr-cell">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="meter" style="margin-top:8px"><i id="u-meter" style="width:0%"></i></div>
+
+          <p class="kicker" style="margin-top:16px"><svg class="ic"><use href="#i-copy"/></svg><span class="fa">رونوشتِ لینک‌های اشتراک (مالتی‌کلاینت)</span><span class="en">MULTI-CLIENT SUBSCRIPTION LINKS</span></p>
+          <div class="sub-grid">
+            <button class="btn primary sm-btn" id="cp-b64" type="button">
+              <svg class="ic ic-sm"><use href="#i-copy"/></svg>
+              <span class="fa">اشتراک عمومی (Base64)</span><span class="en">NORMAL SUB (BASE64)</span>
+            </button>
+            <button class="btn sm-btn" id="cp-xray" type="button">
+              <svg class="ic ic-sm"><use href="#i-bolt"/></svg>
+              <span class="fa">اشتراک Fragment (Xray)</span><span class="en">FRAGMENT SUB (XRAY)</span>
+            </button>
+            <button class="btn sm-btn" id="cp-sb" type="button">
+              <svg class="ic ic-sm"><use href="#i-copy"/></svg>
+              <span class="fa">اشتراک Sing-box / Hiddify</span><span class="en">SING-BOX / HIDDIFY</span>
+            </button>
+            <button class="btn sm-btn" id="cp-clash" type="button">
+              <svg class="ic ic-sm"><use href="#i-copy"/></svg>
+              <span class="fa">اشتراک Clash / Mihomo</span><span class="en">CLASH / MIHOMO YAML</span>
+            </button>
+            <button class="btn ghost sm-btn" id="cp-doh" type="button">
+              <svg class="ic ic-sm"><use href="#i-globe"/></svg>
+              <span class="fa">سرور DoH اختصاصی</span><span class="en">PRIVATE DoH URL</span>
+            </button>
+            <a class="btn ghost sm-btn" id="open-pass" href="#" target="_blank" rel="noopener">
+              <span class="fa">صفحهٔ مشترک</span><span class="en">SUBSCRIBER PAGE</span>
+              <svg class="ic ic-sm"><use href="#i-external"/></svg>
+            </a>
+          </div>
+          <p class="hint">
+            <span class="fa">Normal تنظیمات سازگار با URI مانند IP، پورت، مسیر WS و اثرانگشت TLS را می‌برد. خروجی Fragment همچنان JSON مخصوص کلاینت سازگار است؛ URI استاندارد حامل قابل‌اتکای Fragment واقعی نیست. تغییرات مشاور پس از «اعمال و ذخیره» روی لینک Normal منتشر می‌شوند.</span>
+            <span class="en">Normal carries URI-compatible IP, port, WS path and TLS fingerprint settings. Fragment remains a separate JSON config for compatible clients; a standard URI cannot reliably carry true Fragment. Advisor changes reach Normal after Apply &amp; Save.</span>
+          </p>
+
+          <div class="tg-box mt-auto" id="dash-tg-box">
+            <p class="kicker" style="margin:0 0 8px">
+              <svg class="ic"><use href="#i-send"/></svg>
+              <span class="fa">پروکسی رسمی تلگرام (Web Proxy — بدون نیاز به فیلترشکن)</span>
+              <span class="en">OFFICIAL TELEGRAM WEB PROXY (NO VPN APP NEEDED)</span>
+            </p>
+            <div class="actions" style="margin-top:6px">
+              <a class="btn primary sm-btn" id="dash-tg-open" href="#">
+                <svg class="ic ic-sm"><use href="#i-send"/></svg>
+                <span class="fa">اتصال یک‌ضرب در تلگرام</span><span class="en">CONNECT IN TELEGRAM</span>
+              </a>
+              <button class="btn ghost sm-btn" id="dash-tg-copy" type="button">
+                <svg class="ic ic-sm"><use href="#i-copy"/></svg>
+                <span class="fa">کپی لینک اشتراک تلگرام</span><span class="en">COPY t.me LINK</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker"><svg class="ic"><use href="#i-qr"/></svg><span class="fa">کدِ مربعی (QR) و نودهای تولیدشده</span><span class="en">QR PLATE &amp; GENERATED NODES</span></p>
+          <div class="qr-center">
+            <div class="qrbox"><div class="qr" id="main-qr"></div></div>
+            <p class="mono sm" id="qr-caption" style="margin:9px 0 0;word-break:break-all">NORMAL SUBSCRIPTION</p>
+          </div>
+          <div class="actions" style="justify-content:center;margin-top:8px">
+            <button class="btn ghost sm-btn" id="qr-btn-b64" type="button">Normal QR</button>
+            <button class="btn ghost sm-btn" id="qr-btn-xray" type="button">Fragment QR</button>
+            <button class="btn ghost sm-btn" id="qr-btn-sb" type="button">Sing-box QR</button>
+            <button class="btn ghost sm-btn" id="qr-btn-tg" type="button">Telegram QR</button>
+          </div>
+
+          <div class="dotted" style="margin:12px 0"></div>
+          <p class="kicker"><svg class="ic"><use href="#i-server"/></svg><span class="fa">فهرستِ نودهای این مشترک (<span id="node-count">0</span>)</span><span class="en">GENERATED NODES (<span id="node-count-en">0</span>)</span></p>
+          <div class="node-list" id="admin-nodes" style="flex:1;max-height:380px"></div>
+        </div>
+      </div>
+
+      <section class="card client-directory" aria-label="Official client sources">
+        <p class="kicker"><svg class="ic"><use href="#i-external"/></svg><span class="fa">منابع رسمی برنامه‌ها، دسته‌بندی‌شده بر اساس سیستم‌عامل</span><span class="en">OFFICIAL CLIENT SOURCES BY OPERATING SYSTEM</span></p>
+        <p class="hint"><span class="fa">لینک‌ها منابع رسمی گیتهاب، App Store یا راهنمای دریافت برنامه هستند. CoreForge از راهنمای TestFlight دریافت می‌شود و نام فعلی مقصد ForgeCore است. بعضی برنامه‌ها پولی یا آزمایشی‌اند؛ سازگاری فرمت ساب را در برنامه بررسی کنید.</span><span class="en">Links open official repositories, App Store listings or the developer’s download guide. CoreForge’s TestFlight destination is currently named ForgeCore. Some apps are paid or beta; verify format compatibility.</span></p>
+        <div class="client-os-grid">
+          <div class="client-os"><h3>Windows</h3><div class="client-links">
+<a class="client-link" href="https://github.com/WhiteDNS/WhiteVPN-Desktop" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_WHITEVPN}}" width="23" height="23" alt="" loading="lazy"><span>WhiteVPN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+<a class="client-link" href="https://github.com/KaringX/karing" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_KARING}}" width="23" height="23" alt="" loading="lazy"><span>Karing</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a><a class="client-link" href="https://github.com/patterniha/PattN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_PATTN}}" width="23" height="23" alt="" loading="lazy"><span>PattN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_V2RAYN}}" width="23" height="23" alt="" loading="lazy"><span>v2rayN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/hiddify/hiddify-app" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_HIDDIFY}}" width="23" height="23" alt="" loading="lazy"><span>Hiddify</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_CLASH}}" width="23" height="23" alt="" loading="lazy"><span>Clash Verge Rev</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div></div>
+          <div class="client-os"><h3>Linux</h3><div class="client-links">
+<a class="client-link" href="https://github.com/WhiteDNS/WhiteVPN-Desktop" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_WHITEVPN}}" width="23" height="23" alt="" loading="lazy"><span>WhiteVPN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a><a class="client-link" href="https://github.com/KaringX/karing" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_KARING}}" width="23" height="23" alt=""><span>Karing</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+<a class="client-link" href="https://github.com/patterniha/PattN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_PATTN}}" width="23" height="23" alt="" loading="lazy"><span>PattN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_V2RAYN}}" width="23" height="23" alt="" loading="lazy"><span>v2rayN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/hiddify/hiddify-app" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_HIDDIFY}}" width="23" height="23" alt="" loading="lazy"><span>Hiddify</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_CLASH}}" width="23" height="23" alt="" loading="lazy"><span>Clash Verge Rev</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/SagerNet/sing-box" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_SINGBOX}}" width="23" height="23" alt="" loading="lazy"><span>sing-box CLI</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div></div>
+          <div class="client-os"><h3>Android</h3><div class="client-links">
+<a class="client-link" href="https://github.com/WhiteDNS/WhiteVPN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_WHITEVPN}}" width="23" height="23" alt="" loading="lazy"><span>WhiteVPN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a><a class="client-link" href="https://github.com/KaringX/karing" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_KARING}}" width="23" height="23" alt="" loading="lazy"><span>Karing</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a><a class="client-link" href="https://github.com/patterniha/PattNG" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_PATTNG}}" width="23" height="23" alt="" loading="lazy"><span>PattNG</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/2dust/v2rayNG" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_V2RAYNG}}" width="23" height="23" alt="" loading="lazy"><span>v2rayNG</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/hiddify/hiddify-app" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_HIDDIFY}}" width="23" height="23" alt="" loading="lazy"><span>Hiddify</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div></div>
+          <div class="client-os"><h3>macOS</h3><div class="client-links">
+<a class="client-link" href="https://github.com/WhiteDNS/WhiteVPN-Desktop" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_WHITEVPN}}" width="23" height="23" alt="" loading="lazy"><span>WhiteVPN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+<a class="client-link" href="https://github.com/KaringX/karing" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_KARING}}" width="23" height="23" alt="" loading="lazy"><span>Karing</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a><a class="client-link" href="https://github.com/patterniha/PattN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_PATTN}}" width="23" height="23" alt="" loading="lazy"><span>PattN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_V2RAYN}}" width="23" height="23" alt="" loading="lazy"><span>v2rayN</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/hiddify/hiddify-app" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_HIDDIFY}}" width="23" height="23" alt="" loading="lazy"><span>Hiddify</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_CLASH}}" width="23" height="23" alt="" loading="lazy"><span>Clash Verge Rev</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div></div>
+          <div class="client-os"><h3>iOS / iPadOS</h3><div class="client-links">
+<a class="client-link" href="https://whitedns.online/tools/coreforge/" target="_blank" rel="noopener noreferrer" title="CoreForge / ForgeCore — TestFlight"><img class="client-logo" src="{{ICON_COREFORGE}}" width="23" height="23" alt="" loading="lazy"><span>CoreForge · TestFlight</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+<a class="client-link" href="https://github.com/KaringX/karing" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_KARING}}" width="23" height="23" alt="" loading="lazy"><span>Karing</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://github.com/hiddify/hiddify-app" target="_blank" rel="noopener noreferrer"><img class="client-logo" src="{{ICON_HIDDIFY}}" width="23" height="23" alt="" loading="lazy"><span>Hiddify</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener noreferrer"><span class="client-store mono" aria-hidden="true">STORE</span><span>Shadowrocket</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="client-link" href="https://apps.apple.com/us/app/streisand/id6450534064" target="_blank" rel="noopener noreferrer"><span class="client-store mono" aria-hidden="true">STORE</span><span>Streisand</span><svg class="ic ic-sm" aria-hidden="true"><use href="#i-external"/></svg></a>
+          </div></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ─────────────────── TAB 2: SUBSCRIBERS ─────────────────── -->
+    <div class="tab-pane" id="pane-users" hidden>
+      <div class="stack">
+        <div class="card">
+          <div class="stat-strip">
+            <p class="kicker" style="margin:0"><svg class="ic"><use href="#i-plus"/></svg><span class="fa" id="uf-title-fa">افزودنِ مشترک تازه</span><span class="en" id="uf-title-en">ADD NEW SUBSCRIBER</span></p>
+            <button class="btn ghost sm-btn" id="uf-reset" type="button" hidden>
+              <svg class="ic ic-sm"><use href="#i-x"/></svg>
+              <span class="fa">لغو ویرایش</span><span class="en">CANCEL EDIT</span>
+            </button>
+          </div>
+
+          <form id="f-user" style="margin-top:12px">
+            <input type="hidden" id="uf-id" value="">
+            <div class="field-grid">
+              <div>
+                <label class="fld-label" for="uf-name"><span class="fa">نامِ مشترک</span><span class="en">SUBSCRIBER NAME</span></label>
+                <input id="uf-name" class="fa-inp" type="text" autocomplete="off" required placeholder="مثلاً: علی — موبایل">
+              </div>
+              <div>
+                <label class="fld-label" for="uf-note"><span class="fa">یادداشت (اختیاری)</span><span class="en">NOTE (OPTIONAL)</span></label>
+                <input id="uf-note" class="fa-inp" type="text" autocomplete="off" placeholder="همراه اول / شخصی">
+              </div>
+              <div>
+                <label class="fld-label" for="uf-gb"><span class="fa">سقفِ حجم به گیگابایت (۰ = نامحدود)</span><span class="en">QUOTA LIMIT GB (0 = UNLIMITED)</span></label>
+                <input id="uf-gb" type="number" min="0" step="0.5" value="0">
+              </div>
+              <div>
+                <label class="fld-label" for="uf-days"><span class="fa">مهلتِ زمانی به روز (۰ = بدون انقضا)</span><span class="en">EXPIRY DAYS (0 = NEVER)</span></label>
+                <input id="uf-days" type="number" min="0" step="1" value="0">
+              </div>
+              <div>
+                <label class="fld-label" for="uf-uuid"><span class="fa">شناسهٔ VLESS (UUID)</span><span class="en">VLESS UUID</span></label>
+                <div class="fld">
+                  <input id="uf-uuid" dir="ltr" type="text" autocomplete="off" placeholder="auto">
+                  <button class="mini" id="uf-gen-uuid" type="button" title="Mint UUID"><svg class="ic"><use href="#i-refresh"/></svg></button>
+                </div>
+              </div>
+              <div>
+                <label class="fld-label" for="uf-tr"><span class="fa">رمزِ Trojan</span><span class="en">TROJAN PASSWORD</span></label>
+                <div class="fld">
+                  <input id="uf-tr" dir="ltr" type="text" autocomplete="off" placeholder="auto">
+                  <button class="mini" id="uf-gen-tr" type="button" title="Mint Password"><svg class="ic"><use href="#i-key"/></svg></button>
+                </div>
+              </div>
+              <div class="field-full">
+                <label class="chk">
+                  <input id="uf-first" type="checkbox">
+                  <span>
+                    <span class="fa">شروعِ شمارشِ روزهای اعتبار فقط از <strong>اولین اتصالِ واقعی</strong> مشترک (Start on First Connect)</span>
+                    <span class="en">Start expiry countdown on <strong>first actual connection</strong></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn primary" type="submit">
+                <svg class="ic ic-sm"><use href="#i-check"/></svg>
+                <span class="fa" id="uf-submit-fa">ثبتِ مشترک</span><span class="en" id="uf-submit-en">SAVE SUBSCRIBER</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <p class="kicker"><svg class="ic"><use href="#i-users"/></svg><span class="fa">دفترِ کلِ مشترکین</span><span class="en">SUBSCRIBER LEDGER</span></p>
+          <div class="user-list" id="users-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────────── TAB 3: NETWORK, CLEAN IP & FRAGMENT ─────────────── -->
+    <div class="tab-pane" id="pane-net" hidden>
+      <div class="cols-even compact-net-grid"><div class="stack"><div class="card">
+<p class="kicker"><svg class="ic"><use href="#i-sliders"></use></svg><span class="fa">پروتکل‌ها، پورت‌ها و TLS</span><span class="en">PROTOCOLS, PORTS &amp; TLS</span></p>
+<div class="check-list">
+<label class="chk"><input id="s-vless" type="checkbox"/><span><strong>VLESS</strong> over WS</span></label>
+<label class="chk"><input id="s-trojan" type="checkbox"/><span><strong>Trojan</strong> over WS</span></label>
+<label class="chk field-full"><input id="s-http-on" type="checkbox"/><span><span class="fa">تولید نودهای بدون TLS (پورت‌های HTTP ۸۰/۸۰۸۰ برای دامنهٔ workers.dev)</span><span class="en">Include non-TLS HTTP ports (80/8080)</span></span></label>
+</div>
+<p class="fld-label" style="margin-top:12px"><span class="fa">پورت‌های TLS کلادفلر (همهٔ پورت‌های تیک‌خورده در اشتراک تولید می‌شوند)</span><span class="en">CLOUDFLARE TLS PORTS (ALL CHECKED PORTS EMIT NODES)</span></p>
+<div class="check-list ports-grid" id="tls-ports-box">
+<label class="chk"><input type="checkbox" value="443"/><span>443</span></label>
+<label class="chk"><input type="checkbox" value="8443"/><span>8443</span></label>
+<label class="chk"><input type="checkbox" value="2053"/><span>2053</span></label>
+<label class="chk"><input type="checkbox" value="2083"/><span>2083</span></label>
+<label class="chk"><input type="checkbox" value="2087"/><span>2087</span></label>
+<label class="chk"><input type="checkbox" value="2096"/><span>2096</span></label>
+</div>
+<p class="fld-label" style="margin-top:10px"><span class="fa">پورت‌های بدون TLS (HTTP — هنگام فعال بودن تیک بالا)</span><span class="en">CLOUDFLARE HTTP PORTS (WHEN NON-TLS IS ENABLED)</span></p>
+<div class="check-list ports-grid" id="http-ports-box">
+<label class="chk"><input type="checkbox" value="80"/><span>80</span></label>
+<label class="chk"><input type="checkbox" value="8080"/><span>8080</span></label>
+<label class="chk"><input type="checkbox" value="8880"/><span>8880</span></label>
+<label class="chk"><input type="checkbox" value="2052"/><span>2052</span></label>
+<label class="chk"><input type="checkbox" value="2082"/><span>2082</span></label>
+<label class="chk"><input type="checkbox" value="2086"/><span>2086</span></label>
+<label class="chk"><input type="checkbox" value="2095"/><span>2095</span></label>
+</div>
+<div class="field-grid mt-auto">
+<div>
+<label class="fld-label" for="s-fp"><span class="fa">اثرانگشت TLS (uTLS)</span><span class="en">uTLS FINGERPRINT</span></label>
+<select id="s-fp">
+<option value="chrome">chrome</option>
+<option value="firefox">firefox</option>
+<option value="safari">safari</option>
+<option value="ios">ios</option>
+<option value="android">android</option>
+<option value="edge">edge</option>
+<option value="randomized">randomized</option>
+</select>
+</div>
+<div>
+<label class="fld-label" for="s-alpn">ALPN</label>
+<select id="s-alpn">
+<option value="http/1.1">http/1.1 (Recommended WS)</option>
+<option value="h2,http/1.1">h2,http/1.1</option>
+<option value="h3">h3</option>
+</select>
+</div>
+<div>
+<label class="fld-label" for="s-ed"><span class="fa">دادهٔ زودهنگام (Early Data)</span><span class="en">EARLY DATA</span></label>
+<select id="s-ed">
+<option value="2048">2048 (Standard)</option>
+<option value="2560">2560 (Max)</option>
+<option value="0">0 (Off)</option>
+</select>
+</div>
+<div>
+<label class="fld-label" for="s-wspath"><span class="fa">مسیر WebSocket</span><span class="en">WS PATH</span></label>
+<input dir="ltr" id="s-wspath" type="text" value="/"/>
+</div>
+</div>
+</div><div class="card">
+<p class="kicker"><svg class="ic"><use href="#i-bolt"></use></svg><span class="fa">تنظیمات ضد فیلتر (Fragment &amp; Noise)</span><span class="en">ANTI-DPI FRAGMENTATION</span></p>
+<label class="chk">
+<input id="s-frag-on" type="checkbox"/>
+<span>
+<span class="fa">فعال‌سازی <strong>Fragment</strong> در اشتراک‌های Xray و Sing-box (عبور از فیلترینگ SNI در ایران)</span>
+<span class="en">Enable TLS Fragmentation in Xray &amp; Sing-box subscriptions</span>
+</span>
+</label>
+<div class="actions" style="margin-top:10px">
+<button class="btn ghost sm-btn frag-preset" data-i="10-20" data-l="10-20" data-p="1-1" type="button">
+<span class="fa">آزمایشی و کندتر (شدید 1-1)</span><span class="en">SEVERE (1-1)</span>
+</button>
+<button class="btn ghost sm-btn frag-preset" data-i="1-3" data-l="100-200" data-p="tlshello" type="button">
+<span class="fa">شروع پیشنهادی (TLSHello؛ بدون تضمین اتصال)</span><span class="en">TLSHELLO</span>
+</button>
+<button class="btn ghost sm-btn frag-preset" data-i="10-20" data-l="20-50" data-p="1-3" type="button">
+<span class="fa">ملایم (1-3)</span><span class="en">MILD (1-3)</span>
+</button>
+</div>
+<div class="field-grid" style="margin-top:10px">
+<div>
+<label class="fld-label" for="s-frag-pkt">Packets</label>
+<input dir="ltr" id="s-frag-pkt" type="text" value="tlshello"/>
+</div>
+<div>
+<label class="fld-label" for="s-frag-len">Length (bytes)</label>
+<input dir="ltr" id="s-frag-len" type="text" value="100-200"/>
+</div>
+<div>
+<label class="fld-label" for="s-frag-int">Interval (ms)</label>
+<input dir="ltr" id="s-frag-int" type="text" value="1-3"/>
+</div>
+<div style="display:flex;align-items:flex-end">
+<label class="chk" style="width:100%">
+<input id="s-noise" type="checkbox"/>
+<span><span class="fa">تزریق UDP Noise (Xray)</span><span class="en">UDP Noise (Xray)</span></span>
+</label>
+</div>
+</div>
+<div class="dotted" style="margin:14px 0"></div>
+<div class="mt-auto" style="padding-top:0">
+<label class="fld-label" for="s-custom-domains">
+<span class="fa">دامنه‌های سفارشی متصل به ورکر (پورت‌های انتخابی بالا؛ هر پورت باید جداگانه آزمایش شود)</span>
+<span class="en">CUSTOM DOMAINS (SELECTED PORTS; VERIFY EACH PORT IN A REAL CLIENT)</span>
+</label>
+<textarea id="s-custom-domains" placeholder="sub.yourdomain.com" style="min-height:76px"></textarea>
+<p class="hint" style="margin-top:8px">
+<span class="fa">مقادیر Fragment فقط در کانفیگ JSON کلاینت سازگار معنا دارند؛ بسته به شبکه و برنامه امتحان کنید، نه به‌عنوان راه‌حل قطعی. اشتراک Normal همچنان URI استاندارد است و Fragment واقعی را حمل نمی‌کند.</span>
+<span class="en">Fragment settings apply to compatible JSON client configs. Test them per network and app; no bypass is guaranteed. Standard Normal URIs do not carry actual Fragment settings.</span>
+</p>
+</div>
+</div></div><div class="stack"><div class="card">
+<p class="kicker"><svg class="ic"><use href="#i-radar"></use></svg><span class="fa">IPها و دامنه‌های تمیز کلادفلر + اسکنرِ مرورگر</span><span class="en">CLEAN IPs, DOMAINS &amp; BROWSER SCANNER</span></p>
+<label class="fld-label" for="s-cleanips">
+<span class="fa">فهرست IP / دامنهٔ شما (هر خط یک مورد؛ کد تقریبی کشور برای نام نود: <code>172.67.73.163#US|MCI</code>)</span>
+<span class="en">YOUR IPs / DOMAINS (ONE PER LINE; APPROX. COUNTRY TAG: <code>172.67.73.163#US|MCI</code>)</span>
+</label>
+<textarea id="s-cleanips" style="min-height:120px"></textarea>
+<div class="actions" style="margin-top:10px">
+<button class="btn primary sm-btn" id="btn-scan-user-list" type="button">
+<svg class="ic ic-sm"><use href="#i-bolt"></use></svg>
+<span class="fa">اسکن لیستِ فعلیِ شما</span><span class="en">SCAN YOUR LISTED IPs</span>
+</button>
+<button class="btn ghost sm-btn" hidden="" id="btn-prune-clean" type="button">
+<svg class="ic ic-sm"><use href="#i-check"></use></svg>
+<span class="fa">اولویت‌بندی پاسخگوها (بدون حذف IP)</span><span class="en">PRIORITIZE RESPONSES (KEEP IPs)</span>
+</button>
+<button class="btn ghost sm-btn" id="btn-scan-clean" type="button">
+<svg class="ic ic-sm"><use href="#i-radar"></use></svg>
+<span class="fa">رنج‌های رسمی کلادفلر</span><span class="en">OFFICIAL CF RANGES</span>
+</button>
+<button class="btn ghost sm-btn" id="btn-add-presets" type="button">
+<svg class="ic ic-sm"><use href="#i-plus"></use></svg>
+<span class="fa">افزودن منتخب‌ها</span><span class="en">ADD PRESETS</span>
+</button>
+</div>
+<div class="actions" style="margin-top:7px"><label class="chk"><input id="scan-geo" type="checkbox"/><span><span class="fa">برچسب کشور تقریبی (سرویس ثالث؛ اختیاری)</span><span class="en">Approximate GeoIP label (third party; optional)</span></span></label><button class="btn ghost sm-btn" hidden="" id="btn-scan-stop" type="button"><span class="fa">توقف اسکن</span><span class="en">STOP SCAN</span></button></div>
+<p class="hint"><span class="fa">زمان HTTPS از اینترنت همین مرورگر اندازه‌گیری می‌شود؛ زمان خطا پینگ موفق نیست. پاسخ IP نیز سلامت کامل تونل را تضمین نمی‌کند.</span><span class="en">HTTPS timings use this browser’s network; error durations are not successful pings or full-tunnel verification.</span></p>
+<div class="range-panel" hidden="" id="cf-ranges-panel">
+<div class="stat-strip">
+<strong class="fld-label" style="margin:0"><span class="fa">منبع: </span><span class="en">SOURCE: </span><a class="inline-link mono" href="https://api.cloudflare.com/client/v4/ips" rel="noopener noreferrer" target="_blank">Cloudflare Public IP API <svg class="ic ic-sm"><use href="#i-external"></use></svg></a></strong>
+<span class="mono sm" id="cf-ranges-total">—</span>
+</div>
+<p class="hint"><span class="fa">تعداد نمونهٔ هر رنج: ۰ تا ۱۲، مجموع حداکثر ۴۸. زمان‌ها از اینترنت همین مرورگرند. کشورِ GeoIP تقریبی است، نه مکان قطعی لبه.</span><span class="en">Choose 0–12 samples per range, 48 total max. Timings use this browser’s network. GeoIP is approximate, not a proven edge location.</span></p>
+<div class="range-list" id="cf-range-list"></div>
+<p class="hint"><span class="fa">آزمون HTTPS مستقیماً از اینترنت همین مرورگر انجام می‌شود؛ زمان پاسخ موفق، مدت تلاش ناموفق و تعداد پاسخ‌ها جدا نمایش داده می‌شوند. نتیجهٔ خطا به‌عنوان IP سالم ذخیره نمی‌شود.</span><span class="en">HTTPS probes run on this browser’s network. Successful response time and failed-attempt duration are reported separately; errors are never ranked as healthy IPs.</span></p>
+<div class="actions"><button class="btn primary sm-btn" id="btn-scan-ranges" type="button"><svg class="ic ic-sm"><use href="#i-radar"></use></svg><span class="fa">نمونه‌گیری و بررسی نامزدها</span><span class="en">SAMPLE &amp; PROBE CANDIDATES</span></button></div>
+</div>
+<p class="hint" hidden="" id="scan-summary"></p>
+<div class="scan-grid" hidden="" id="scan-results"></div>
+</div><div class="card">
+<p class="kicker"><svg class="ic"><use href="#i-globe"></use></svg><span class="fa">خروجیِ ورکر: ProxyIP، NAT64 و پروکسی زنجیره‌ای</span><span class="en">OUTBOUND: PROXYIP, NAT64 &amp; CHAIN</span></p>
+<label class="fld-label" for="s-proxyips">
+<span class="fa">فهرست ProxyIP (برای باز شدن سایت‌های پشت کلادفلر مثل speedtest.net — هر خط <code>host</code> یا <code>host:port</code>)</span>
+<span class="en">PROXY IPs (FALLBACK FOR CLOUDFLARE-HOSTED SITES LIKE SPEEDTEST)</span>
+</label>
+<textarea id="s-proxyips" placeholder="ProxyIP.NL.CMLiussss.net" style="min-height:66px"></textarea>
+<div class="actions" style="margin-top:8px">
+<button class="btn ghost sm-btn" id="btn-test-proxyip" type="button">
+<svg class="ic ic-sm"><use href="#i-radar"></use></svg>
+<span class="fa">تست اتصالِ اولین ProxyIP از روی ورکر</span><span class="en">TEST PROXYIP FROM WORKER</span>
+</button>
+<span class="mono sm" id="proxyip-res"></span>
+</div>
+<div style="margin-top:12px">
+<label class="chk">
+<input id="s-nat64-on" type="checkbox"/>
+<span><span class="fa">فعال‌سازی پشتیبان <strong>NAT64</strong> (تبدیل خودکار IPv4 به IPv6)</span><span class="en">Enable NAT64 IPv6 Fallback</span></span>
+</label>
+<textarea id="s-nat64" style="min-height:56px;margin-top:6px"></textarea>
+</div>
+<div class="mt-auto">
+<label class="fld-label" for="s-chain">
+<span class="fa">پروکسی زنجیره‌ای خروجی (SOCKS5 / HTTP برای IP ثابت — اختیاری)</span>
+<span class="en">CHAIN OUTBOUND PROXY (SOCKS5 / HTTP FOR FIXED EXIT IP)</span>
+</label>
+<div class="fld">
+<input dir="ltr" id="s-chain" placeholder="socks5://user:pass@1.2.3.4:1080" type="text"/>
+<button class="btn ghost sm-btn" id="btn-test-chain" type="button">TEST</button>
+</div>
+</div>
+</div></div><div class="card field-full">
+<p class="kicker">
+<svg class="ic"><use href="#i-send"></use></svg>
+<span class="fa">پروکسیِ رسمیِ تلگرام (Telegram Web Proxy — بدون نیاز به برنامه‌جانبی)</span>
+<span class="en">OFFICIAL TELEGRAM WEB PROXY (DESKTOP &amp; ANDROID)</span>
+</p>
+<label class="chk">
+<input id="s-tgproxy" type="checkbox"/>
+<span>
+<span class="fa">فعال‌سازی <strong>پروکسی رسمی تلگرام (<code>tg://webproxy</code>)</strong> روی همین ورکر با رمزنگاری سرتاسری MTProto</span>
+<span class="en">Enable Official Telegram Web Proxy (<code>tg://webproxy</code>) on this Worker</span>
+</span>
+</label>
+<div class="field-grid" style="margin-top:10px">
+<div>
+<label class="fld-label" for="s-tgsecret"><span class="fa">کلید مخفی ۳۲ کاراکتری (Secret Hex)</span><span class="en">32-CHAR HEX SECRET</span></label>
+<div class="fld">
+<input dir="ltr" id="s-tgsecret" maxlength="34" placeholder="auto-generated 32-hex" type="text"/>
+<button class="mini" id="btn-gen-tgsecret" title="Generate new secret" type="button"><svg class="ic"><use href="#i-refresh"></use></svg></button>
+</div>
+</div>
+<div>
+<label class="fld-label" for="s-tgdomain"><span class="fa">دامنهٔ اختصاصیِ پروکسی تلگرام (اختیاری — خالی = دامنهٔ فعلی ورکر)</span><span class="en">OPTIONAL CUSTOM DOMAIN (BLANK = CURRENT HOST)</span></label>
+<input dir="ltr" id="s-tgdomain" placeholder="tg.yourdomain.com" type="text"/>
+</div>
+</div>
+<div class="actions" style="margin-top:10px">
+<a class="btn primary sm-btn" href="#" id="set-tg-open">
+<svg class="ic ic-sm"><use href="#i-send"></use></svg>
+<span class="fa">اتصال یک‌ضرب در تلگرام</span><span class="en">CONNECT IN TELEGRAM</span>
+</a>
+<button class="btn ghost sm-btn" id="set-tg-copy" type="button">
+<svg class="ic ic-sm"><use href="#i-copy"></use></svg>
+<span class="fa">کپی لینک اشتراک تلگرام (t.me)</span><span class="en">COPY SHAREABLE t.me LINK</span>
+</button>
+</div>
+</div></div>
+
+      <div class="actions">
+        <button class="btn primary" id="save-net" type="button">
+          <svg class="ic ic-sm"><use href="#i-check"/></svg>
+          <span class="fa">ذخیرهٔ تنظیماتِ شبکه و Fragment</span><span class="en">SAVE NETWORK &amp; FRAGMENT SETTINGS</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─────────────── TAB 4: ROUTING & PRIVATE DoH ─────────────── -->
+    <div class="tab-pane" id="pane-route" hidden>
+      <div class="cols-even">
+        <div class="card">
+          <p class="kicker"><svg class="ic"><use href="#i-globe"/></svg><span class="fa">سرور DoH اختصاصی و تنظیمات DNS</span><span class="en">PRIVATE DoH &amp; DNS SERVERS</span></p>
+          <div class="stack" style="margin-top:6px;gap:10px">
+            <div>
+              <label class="fld-label" for="s-updoh"><span class="fa">سرور DoH بالادستیِ ورکر (Upstream DoH)</span><span class="en">WORKER UPSTREAM DoH</span></label>
+              <select id="s-updoh">
+                <option value="https://1.1.1.1/dns-query">Cloudflare (https://1.1.1.1/dns-query)</option>
+                <option value="https://dns.google/dns-query">Google (https://dns.google/dns-query)</option>
+                <option value="https://dns.quad9.net/dns-query">Quad9 Security (https://dns.quad9.net/dns-query)</option>
+                <option value="https://unfiltered.adguard-dns.com/dns-query">AdGuard Unfiltered</option>
+              </select>
+            </div>
+            <div>
+              <label class="fld-label" for="s-remotedns"><span class="fa">DNS راه دور در فایل اشتراکِ کلاینت‌ها</span><span class="en">CLIENT REMOTE DNS</span></label>
+              <select id="s-remotedns">
+                <option value="private-doh">Private DoH (/dns-query/&lt;token&gt; on this Worker)</option>
+                <option value="cloudflare">Cloudflare DoH (1.1.1.1)</option>
+                <option value="google">Google DoH (dns.google)</option>
+                <option value="quad9">Quad9 DoH (dns.quad9.net)</option>
+              </select>
+            </div>
+            <div>
+              <label class="fld-label" for="s-directdns"><span class="fa">DNS مستقیم (برای سایت‌های داخلی)</span><span class="en">DIRECT DOMESTIC DNS</span></label>
+              <input id="s-directdns" dir="ltr" type="text" value="8.8.8.8">
+            </div>
+          </div>
+
+          <p class="kicker" style="margin-top:16px"><svg class="ic"><use href="#i-sliders"/></svg><span class="fa">کلیدهای مسیریابیِ هوشمند</span><span class="en">SMART ROUTING SWITCHES</span></p>
+          <div class="check-list" style="grid-template-columns:1fr;gap:6px">
+            <label class="chk"><input type="checkbox" id="r-ir"><span><span class="fa">دور زدن دامنه‌ها و IPهای <strong>ایران</strong> (اتصال مستقیم بانک‌ها و سایت‌های .ir)</span><span class="en">Bypass Iran (.ir &amp; geoip:ir direct)</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-lan"><span><span class="fa">دور زدن شبکهٔ محلی (LAN / مودم)</span><span class="en">Bypass Private LAN IPs</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-quic"><span><span class="fa">مسدودسازی <strong>QUIC</strong> (UDP 443 — افزایش پایداری در اپراتورهای ایران)</span><span class="en">Block QUIC (UDP 443)</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-ads"><span><span class="fa">مسدودسازی تبلیغات، ردیاب‌ها و فیشینگ (AdBlock)</span><span class="en">Block Ads, Trackers &amp; Malware</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-adult"><span><span class="fa">مسدودسازی محتوای بزرگسالان (Family Filter)</span><span class="en">Block Adult Content</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-sanction"><span><span class="fa">عبور اجباری سرویس‌های تحریمی و هوش مصنوعی از تونل</span><span class="en">Force Sanctioned / AI Domains via Tunnel</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-cn"><span><span class="fa">دور زدن چین (CN)</span><span class="en">Bypass China (CN)</span></span></label>
+            <label class="chk"><input type="checkbox" id="r-ru"><span><span class="fa">دور زدن روسیه (RU)</span><span class="en">Bypass Russia (RU)</span></span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker"><svg class="ic"><use href="#i-compass"/></svg><span class="fa">فهرستِ دامنه‌های سفارشی</span><span class="en">CUSTOM DOMAIN ROUTING LISTS</span></p>
+          <div class="stack" style="margin-top:6px;gap:12px;flex:1">
+            <div style="display:flex;flex-direction:column;flex:1">
+              <label class="fld-label" for="r-proxy-list"><span class="fa">دامنه‌های اجباری با تونل (تحریم‌شکن / هوش مصنوعی — هر خط یک دامنه)</span><span class="en">FORCE PROXY DOMAINS (AI / SANCTIONED)</span></label>
+              <textarea id="r-proxy-list" style="min-height:120px"></textarea>
+            </div>
+            <div style="display:flex;flex-direction:column;flex:1">
+              <label class="fld-label" for="r-direct-list"><span class="fa">دامنه‌های همیشه مستقیم (Direct — هر خط یک دامنه)</span><span class="en">FORCE DIRECT DOMAINS</span></label>
+              <textarea id="r-direct-list" style="flex:1;min-height:92px" placeholder="digikala.com"></textarea>
+            </div>
+            <div style="display:flex;flex-direction:column;flex:1">
+              <label class="fld-label" for="r-block-list"><span class="fa">دامنه‌های همیشه مسدود (Block — هر خط یک دامنه)</span><span class="en">FORCE BLOCKED DOMAINS</span></label>
+              <textarea id="r-block-list" style="flex:1;min-height:92px"></textarea>
+            </div>
+          </div>
+          <p class="hint mt-auto">
+            <span class="fa">با انتخاب گزینهٔ <code>Private DoH</code>، تمام درخواست‌های DNS کلاینت از طریق آدرس رمزنگاری‌شدهٔ <code>/dns-query/&lt;token&gt;</code> روی همین ورکر حل می‌شوند و هیچ نشت DNS رخ نمی‌دهد.</span>
+            <span class="en">With <code>Private DoH</code> enabled, client DNS queries tunnel through <code>/dns-query/&lt;token&gt;</code> on this Worker with zero DNS leakage.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" id="save-route" type="button">
+          <svg class="ic ic-sm"><use href="#i-check"/></svg>
+          <span class="fa">ذخیرهٔ تنظیماتِ مسیریابی و DNS</span><span class="en">SAVE ROUTING &amp; DNS SETTINGS</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─────────────── TAB 5: SMART BROWSER ISP & NETWORK ADVISOR ─────────────── -->
+    <div class="tab-pane" id="pane-advisor" hidden>
+      <div class="card" id="advisor-master-card">
+        <div class="stat-strip">
+          <p class="kicker" style="margin:0">
+            <svg class="ic"><use href="#i-radar"/></svg>
+            <span class="fa">مشاورِ هوشمند اینترنت مرورگر و تنظیم خودکار اپراتور</span>
+            <span class="en">SMART BROWSER ISP &amp; CONNECTIVITY ADVISOR</span>
+          </p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn primary sm-btn" id="btn-adv-run" type="button">
+              <svg class="ic ic-sm" id="adv-run-ic"><use href="#i-radar"/></svg>
+              <span class="fa">شروع تست هوشمند اینترنت من</span><span class="en">RUN FULL ISP DIAGNOSTIC</span>
+            </button>
+            <button class="btn sm-btn" id="btn-adv-apply" type="button" hidden>
+              <svg class="ic ic-sm"><use href="#i-check"/></svg>
+              <span class="fa">اعمال پیشنهادهای قابل‌اجرا و ذخیره</span><span class="en">APPLY SUPPORTED CHANGES &amp; SAVE</span>
+            </button>
+            <button class="btn ghost sm-btn" id="btn-adv-close-guest" type="button" hidden>
+              <svg class="ic ic-sm"><use href="#i-x"/></svg>
+              <span class="fa">بستن</span><span class="en">CLOSE</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="labor advisor-intro"><span class="fa">آزمون مسیر خود پنل: تأخیر و نوسان، WebSocket واقعی، آپلود/دانلود، DNS رمزنگاری و پورت‌های TLS. پیشنهادها فقط پس از تأیید شما ذخیره می‌شوند.</span><span class="en">Measure this Worker’s latency, jitter, WebSocket, transfers, encrypted DNS and TLS ports. Review before applying.</span></p>
+        <div class="advisor-progress" id="adv-progress" hidden><div class="progress-track"><i id="adv-progress-bar"></i></div><span id="adv-stage" role="status" aria-live="polite"></span><button class="btn ghost sm-btn" id="btn-adv-cancel" type="button"><span class="fa">توقف</span><span class="en">STOP</span></button></div>
+
+        <div class="adv-summary" id="adv-summary-box">
+          <div class="adv-verdict" id="adv-verdict">
+            <span class="fa">برای بررسی مسیر مرورگر و آزمون محدود آپلود/دانلود تا ورکر، دکمهٔ شروع تست را بزنید؛ نتیجهٔ نامشخص به معنای فیلتر قطعی نیست.</span>
+            <span class="en">Run browser transport and bounded Worker upload/download probes. An inconclusive result does not prove a site is blocked.</span>
+          </div>
+          <div class="adv-path-metrics" id="adv-path-metrics" hidden>
+            <div><span><span class="fa">تأخیر میانهٔ پنل</span><span class="en">MEDIAN RTT</span></span><strong id="adv-rtt" class="mono">—</strong></div>
+            <div><span><span class="fa">نوسان / بی‌پاسخ</span><span class="en">JITTER / NO REPLY</span></span><strong id="adv-jitter" class="mono">—</strong></div>
+            <div><span>WebSocket</span><strong id="adv-ws" class="mono">—</strong></div>
+            <div><span><span class="fa">تاخیر هنگام انتقال</span><span class="en">LOADED RTT</span></span><strong id="adv-loaded" class="mono">—</strong></div>
+            <div><span><span class="fa">دریافت از Worker</span><span class="en">WORKER DOWNLOAD</span></span><strong class="mono" id="adv-down">—</strong></div>
+            <div><span><span class="fa">ارسال به Worker</span><span class="en">WORKER UPLOAD</span></span><strong class="mono" id="adv-up">—</strong></div>
+          </div>
+          <ul class="adv-recs" id="adv-recs" hidden></ul>
+        </div>
+
+        <div class="adv-grid" id="adv-grid"></div>
+      </div>
+    </div>
+
+    <!-- ─────────────── TAB 6: STEALTH, SECURITY & BACKUP ─────────────── -->
+    <div class="tab-pane" id="pane-sec" hidden>
+      <div class="cols-even">
+        <div class="stack" style="margin-top:0">
+          <div class="card">
+            <p class="kicker"><svg class="ic"><use href="#i-shield"/></svg><span class="fa">استتارِ صفحهٔ اول و نمایشِ وضعیت اشتراک</span><span class="en">FRONT-PAGE CAMOUFLAGE &amp; SUBSCRIPTION DISPLAY</span></p>
+
+            <div>
+              <label class="fld-label" for="s-rootmode"><span class="fa">رفتارِ آدرسِ ریشه (<code>/</code>) در برابر اسکنرها</span><span class="en">ROOT PATH (<code>/</code>) CAMOUFLAGE</span></label>
+              <select id="s-rootmode" class="fa-sel">
+                <option value="panel">نمایش عادی پنل در / و /panel (پیش‌فرض)</option>
+                <option value="gazette">نشریهٔ پوششی استتار در / (پنل فقط در /panel)</option>
+                <option value="fallback">پروکسی معکوس به سایت دلخواه در / (پنل فقط در /panel)</option>
+              </select>
+            </div>
+            <div style="margin-top:10px">
+              <label class="fld-label" for="s-fallback"><span class="fa">دامنهٔ پوششی برای حالت پروکسی معکوس (مثلاً <code>www.ubuntu.com</code>)</span><span class="en">FALLBACK REVERSE-PROXY DOMAIN</span></label>
+              <input id="s-fallback" dir="ltr" type="text" placeholder="www.ubuntu.com">
+            </div>
+            <div style="margin-top:10px">
+              <label class="chk">
+                <input type="checkbox" id="s-infonodes" checked disabled aria-disabled="true">
+                <span><span class="fa">نمایش اجباری مصرف، انقضا و رایگان‌بودن سرویس در بالای اشتراک</span><span class="en">Show bandwidth &amp; expiry info rows in URI subscriptions</span></span>
+              </label>
+            </div>
+            <div class="actions mt-auto">
+              <button class="btn primary" id="save-sec" type="button">
+                <svg class="ic ic-sm"><use href="#i-check"/></svg>
+                <span class="fa">ذخیرهٔ تنظیماتِ استتار</span><span class="en">SAVE STEALTH SETTINGS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Activity Log balanced into Left Column -->
+          <div class="card card-subtle" style="flex:1">
+            <p class="kicker"><svg class="ic"><use href="#i-chart"/></svg><span class="fa">دفترِ وقایعِ اخیر</span><span class="en">RECENT ACTIVITY LEDGER</span></p>
+            <div class="node-list" id="logs-list" style="flex:1;max-height:190px"></div>
+          </div>
+        </div>
+
+        <div class="stack" style="margin-top:0">
+          <!-- Change Admin Password -->
+          <div class="card">
+            <p class="kicker"><svg class="ic"><use href="#i-lock"/></svg><span class="fa">تغییرِ رمزِ عبورِ مدیر</span><span class="en">CHANGE ADMIN PASSWORD</span></p>
+            <form id="f-pass" class="card-fill">
+              <div class="field-grid">
+                <div>
+                  <label class="fld-label" for="pw-cur"><span class="fa">رمز فعلی</span><span class="en">CURRENT PASSWORD</span></label>
+                  <input id="pw-cur" type="password" required>
+                </div>
+                <div>
+                  <label class="fld-label" for="pw-new"><span class="fa">رمز جدید (حداقل ۶ نویسه)</span><span class="en">NEW PASSWORD</span></label>
+                  <input id="pw-new" type="password" required minlength="6">
+                </div>
+              </div>
+              <div class="actions mt-auto">
+                <button class="btn sm-btn" type="submit">
+                  <svg class="ic ic-sm"><use href="#i-key"/></svg>
+                  <span class="fa">به‌روزرسانی رمز و ابطال نشست‌ها</span><span class="en">UPDATE PASSWORD</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Backup & Restore -->
+          <div class="card" style="flex:1">
+            <p class="kicker"><svg class="ic"><use href="#i-download"/></svg><span class="fa">پشتیبان‌گیری و بازیابی (JSON)</span><span class="en">BACKUP &amp; RESTORE</span></p>
+            <p class="labor" style="margin-bottom:10px">
+              <span class="fa">تمامِ مشترکین، حجم‌ها و تنظیمات شبکه را در قالب یک پروندهٔ JSON ذخیره یا بازیابی کن:</span>
+              <span class="en">Export all subscribers and settings to a portable JSON file, or restore onto a new Worker:</span>
+            </p>
+            <div class="actions mt-auto">
+              <button class="btn primary sm-btn" id="btn-export" type="button">
+                <svg class="ic ic-sm"><use href="#i-download"/></svg>
+                <span class="fa">دانلود فایل پشتیبان</span><span class="en">EXPORT BACKUP JSON</span>
+              </button>
+              <label class="btn ghost sm-btn" style="cursor:pointer">
+                <svg class="ic ic-sm"><use href="#i-upload"/></svg>
+                <span class="fa">درون‌ریزی پشتیبان</span><span class="en">IMPORT JSON</span>
+                <input id="inp-import" type="file" accept=".json,application/json" hidden>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ────────────────────────────── footer ────────────────────────────── -->
+  <footer>
+    <div class="doblerule"><i></i><i></i></div>
+    <p class="colophon mono sm">
+      <span>NIGHTLINE V{{VERSION}} · <span id="year">2026</span></span>
+      <span>·</span>
+      <a class="inline-link" href="https://github.com/youdidking/NightLine" target="_blank" rel="noopener">github.com/youdidking/NightLine</a>
+      <span>·</span>
+      <span class="fa">کاملاً رایگان و متن‌باز · غیرقابل فروش</span>
+      <span class="en">100% FREE &amp; OPEN-SOURCE · STRICTLY NOT FOR SALE</span>
+    </p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>window.NIGHTLINE={{CONFIG}};</script>
+<script>{{QR}}</script>
+<script>{{APP}}</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+name = "nightline"
+main = "worker-single-file.js"
+compatibility_date = "2026-04-01"
+
+# Cloudflare KV storage for multi-user panel, subscriptions, fragment & routing settings.
+# For Dashboard deploy: paste `worker-single-file.js` via "Start with Hello World -> Edit code",
+# then in Settings -> Bindings -> Add KV Namespace with variable name `KV`.
+# For Wrangler CLI deploy: run `npx wrangler kv namespace create KV` and replace `id` below.
+[[kv_namespaces]]
+binding = "KV"
+id = "00000000000000000000000000000000"
+
+[vars]
+PROXYIP = ""
+
+[observability]
+enabled = false
