@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Nightline stamp">
+  <defs>
+    <path id="ring" d="M50 50m-34 0a34 34 0 1 1 68 0a34 34 0 1 1 -68 0"/>
+    <path id="arc" d="M50 50m-26 0a26 26 0 1 1 52 0"/>
+  </defs>
+  <g fill="none" stroke="currentColor">
+    <circle cx="50" cy="50" r="44" stroke-width="2.5"/>
+    <circle cx="50" cy="50" r="39" stroke-width="1"/>
+  </g>
+  <text font-family="monospace" font-size="8.4" letter-spacing="1.6" fill="currentColor">
+    <textPath href="#arc" startOffset="50%" text-anchor="middle">NIGHTLINE · NEW YORK</textPath>
+  </text>
+  <g font-family="monospace" fill="currentColor" text-anchor="middle">
+    <text x="50" y="52" font-size="15" font-weight="bold" letter-spacing="1">EST.</text>
+    <text x="50" y="66" font-size="13" font-weight="bold" letter-spacing="1.6">1950</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.4">
+    <path d="M22 74h56"/>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt"
+
+[deploy]
+startCommand = "python -m app.main"
+healthcheckPath = "/health"
+healthcheckTimeout = 120
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[env]
+ENVIRONMENT = "production"
+LOG_LEVEL = "INFO"
+TIMEZONE = "Asia/Tehran"
+USE_WEBHOOK = "false"

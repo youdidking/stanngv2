@@ -1,0 +1,7 @@
+name = "nightline-free-installer"
+main = "nightline-installer.js"
+compatibility_date = "2026-04-01"
+workers_dev = true
+
+[observability]
+enabled = false

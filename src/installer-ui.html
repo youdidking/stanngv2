@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><title>NIGHTLINE 2.5.3 | نصب اختصاصی</title><style nonce="{{NONCE}}">{{STYLE}}</style></head>
+<body>
+<svg class="symbols" aria-hidden="true"><defs>
+<symbol id="key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><path d="m11 11 10 10m-5-5 3-3m-6 0 3-3"/></symbol>
+<symbol id="account" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></symbol>
+<symbol id="box" viewBox="0 0 24 24"><path d="m3 6 9-4 9 4v13l-9 4-9-4ZM3 6l9 4 9-4M12 10v13M7 4l9 4"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6Z"/><path d="m7 12 3 3 7-7"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="m8 5-7 7 7 7m8-14 7 7-7 7M14 2l-4 20"/></symbol>
+<symbol id="cloud" viewBox="0 0 24 24"><path d="M6 19a5 5 0 1 1 0-10 7 7 0 0 1 14-1 5.5 5.5 0 0 1-1 11ZM12 11v11m-4-4 4 4 4-4"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="m4 12 5 5L21 5"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+<symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13"/><path d="M16 8V3H3v13h5"/></symbol>
+<symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></symbol>
+</defs></svg>
+<main class="paper">
+  <div class="topline"><span dir="ltr">VOL. 2.5.3 / INSTALLER</span><span>رایگان · متن‌باز · غیرقابل فروش</span><button class="icon-btn" id="theme" type="button" title="تغییر تم" aria-label="تغییر تم"><svg><use href="#sun"/></svg></button></div>
+  <header class="masthead"><div class="seal" aria-hidden="true"><span>N</span></div><div><p class="eyebrow">نصب‌کنندهٔ اختصاصی پنل</p><h1 dir="ltr">NIGHTLINE</h1><p class="subhead">از یک توکن تا پنل شما؛ تمام مراحل در همین صفحه</p></div></header>
+  <div class="rule"></div>
+  <div class="layout">
+    <section class="main-column">
+      <div class="section-heading"><span class="issue" dir="ltr">01 / ACCESS</span><h2>کلید ورود به نصب</h2></div>
+      <form id="install" novalidate>
+        <label for="token">توکن API کلادفلر</label>
+        <div class="token-field"><svg><use href="#key"/></svg><input id="token" type="password" dir="ltr" autocomplete="off" spellcheck="false" maxlength="512" placeholder="Cloudflare API Token" aria-describedby="token-help"><button type="button" id="reveal" aria-label="نمایش یا پنهان‌کردن توکن">نمایش</button></div>
+        <div class="form-meta"><small id="token-help">توکن فقط برای همین نصب ارسال می‌شود؛ ذخیره نمی‌شود.</small><a href="{{TOKEN_TEMPLATE}}" id="token-template" target="_blank" rel="noopener noreferrer">ساخت توکن آماده <svg><use href="#arrow"/></svg></a></div>
+        <details class="permissions"><summary>چهار مجوز موردنیاز توکن</summary><p>منابع توکن را به یک اکانت محدود کنید؛ مجوز ویرایش Worker مهم است.</p><ul dir="ltr"><li>Account Analytics · Read</li><li>Account Settings · Read</li><li>Workers Scripts · Edit</li><li>Workers KV Storage · Edit</li></ul></details>
+        <button class="primary" type="submit" id="go"><svg><use href="#cloud"/></svg><span id="go-label">نصب پنل رایگان من</span><span class="button-arrow">←</span></button>
+      </form>
+      <noscript><p class="error-note">برای نمایش مراحل نصب، JavaScript مرورگر باید فعال باشد.</p></noscript>
+      <p class="form-status" id="form-status" role="status" aria-live="polite">آمادهٔ شروع — نصب فقط بعد از تأیید شما انجام می‌شود.</p>
+      <section id="progress-section" hidden aria-label="مراحل نصب">
+        <div class="section-heading"><span class="issue" dir="ltr">02 / DEPLOY</span><h2>خبر زندهٔ نصب</h2><span id="elapsed" class="mono" dir="ltr">00:00</span></div>
+        <div class="progress-line" role="progressbar" aria-label="پیشرفت نصب" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><i id="progress-fill"></i></div>
+        <ol class="steps" id="steps">
+          <li data-step="account"><span class="step-icon"><svg><use href="#account"/></svg></span><div><strong>شناسایی اکانت و دسترسی</strong><small>بررسی توکن و حساب مقصد</small></div><span class="step-state">در انتظار</span></li>
+          <li data-step="package"><span class="step-icon"><svg><use href="#box"/></svg></span><div><strong>آماده‌سازی بستهٔ ۲.۵.۳</strong><small>کنترل یکپارچگی کد تعبیه‌شده</small></div><span class="step-state">در انتظار</span></li>
+          <li data-step="storage"><span class="step-icon"><svg><use href="#box"/></svg></span><div><strong>ساخت فضای اختصاصی KV</strong><small>بدون تغییر کاربران پنل‌های دیگر</small></div><span class="step-state">در انتظار</span></li>
+          <li data-step="security"><span class="step-icon"><svg><use href="#shield"/></svg></span><div><strong>تعیین مدیریت و امنیت</strong><small>گذرواژهٔ تصادفی و قفل راه‌اندازی عمومی</small></div><span class="step-state">در انتظار</span></li>
+          <li data-step="worker"><span class="step-icon"><svg><use href="#code"/></svg></span><div><strong>ارسال و نصب Worker</strong><small>نام اختصاصی nightline-free</small></div><span class="step-state">در انتظار</span></li>
+          <li data-step="publish"><span class="step-icon"><svg><use href="#cloud"/></svg></span><div><strong>انتشار آدرس پنل</strong><small>فعال‌سازی workers.dev</small></div><span class="step-state">در انتظار</span></li>
+          <li data-step="verify"><span class="step-icon"><svg><use href="#check"/></svg></span><div><strong>بررسی و تحویل اطلاعات ورود</strong><small>نمایش نتیجه در همین صفحه</small></div><span class="step-state">در انتظار</span></li>
+        </ol>
+        <details id="log-panel"><summary>جزئیات رویدادها</summary><ol class="event-log" id="event-log" aria-live="polite"></ol></details>
+      </section>
+      <section id="result" class="result" hidden aria-label="نتیجهٔ نصب">
+        <div class="result-title"><svg><use href="#check"/></svg><h2>پنل شما ساخته شد.</h2><span class="mono" dir="ltr">2.5.3</span></div>
+        <p id="result-notice"></p><label>آدرس پنل</label><div class="value-row"><a id="panel-url" target="_blank" rel="noopener noreferrer" dir="ltr"></a><button class="icon-btn" id="copy-url" type="button" aria-label="کپی آدرس"><svg><use href="#copy"/></svg></button></div>
+        <label>گذرواژهٔ مدیریت — همین حالا ذخیره کنید</label><div class="value-row"><input id="password" type="password" readonly dir="ltr"><button class="icon-btn" id="show-password" type="button" aria-label="نمایش گذرواژه"><svg><use href="#key"/></svg></button><button class="icon-btn" id="copy-password" type="button" aria-label="کپی گذرواژه"><svg><use href="#copy"/></svg></button></div>
+        <div class="result-actions"><a class="primary" id="open-panel" target="_blank" rel="noopener noreferrer">ورود به پنل <svg><use href="#arrow"/></svg></a><button class="secondary" type="button" id="download">ذخیرهٔ اطلاعات ورود</button></div>
+        <small>پس از ذخیرهٔ اطلاعات، این نصب‌کننده را حذف و توکن نصب را لغو کنید.</small>
+      </section>
+    </section>
+    <aside class="side-column"><div class="edition-stamp" dir="ltr">FREE<br><span>COMMUNITY EDITION</span></div><h2>نسخهٔ خودت را بساز.</h2><p>پنل، فونت‌ها و آیکون‌ها داخل همین فایل هستند. برای نصب کد، نیازی به دانلود از شاخهٔ متغیر گیتهاب نیست.</p><div class="aside-rule"></div><h3>یک نام روشن، برای همیشه رایگان</h3><p class="mono naming" dir="ltr">nightline-free-<em>random</em><br>.account.workers.dev</p><p>نام اکانت موجود عوض نمی‌شود. Worker و KV جدید ساخته می‌شوند؛ این ابزار مهاجرت پنل قبلی نیست.</p><div class="aside-rule"></div><p class="small-note">هنگام نصب صفحه را نبندید. مراحل واقعی از سرور گزارش می‌شوند؛ خطاها همراه با راهنمای اقدام در همین صفحه نمایش داده می‌شوند.</p><a class="repo" href="https://github.com/youdidking/NightLine" target="_blank" rel="noopener noreferrer"><span dir="ltr">youdidking/NightLine</span><svg><use href="#arrow"/></svg></a></aside>
+  </div>
+  <footer><span>NIGHTLINE · ۲.۵.۳</span><span>خصوصی برای شما؛ رایگان برای جامعه.</span></footer>
+</main><script nonce="{{NONCE}}">{{SCRIPT}}</script></body></html>

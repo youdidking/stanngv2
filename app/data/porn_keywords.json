@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "description": "الگوهای محتوای مستهجن برای ماژول ضد پورن. شامل کلیدواژه، الگو و نام فایل.",
+    "version": 1
+  },
+  "fa": [
+    "پورن", "پورنو", "پورن هاب", "سکس", "سکسی", "جنسی", "رابطه جنسی", "سکس چت",
+    "لخت", "لختی", "برهنه", "عریان", "عکس سکس", "فیلم سکس", "فیلم سوپرایز",
+    "سوپرایزی", "بدنساز لخت", "داف", "داف بازی", "لایی", "لایی بازی", "کیر",
+    "کص", "کون", "جلق", "استمنا", "آبکشی", "ساک زدن", "سکس چت", "چت ناموسی",
+    "همسریابی", "دوستیابی", "بدون سانسور", "سانسور نشده", "صیغه", "صیغه ای",
+    "فاحشه", "فاحشگی", "روسپی", "تن فروش", "ماساژ", "ماساژور", "اروتیک",
+    "سکس تراپی", "پورن استار", "کامبک", "سیاه", "لایو سکس", "چت خصوصی",
+    "عکس داغ", "فیلم داغ", "داغ ترین", "برهنه شدن", "خواهر و برادر",
+    "زنای با محارم", "تجاوز", "خصوصی دارم", "پیج سکس", "کانال سکسی",
+    "سکس ir", "سکس فارسی", "کانال مستهجن", "لینک مستهجن", "رابطه نامشروع"
+  ],
+  "en": [
+    "porn", "porno", "pornhub", "xnxx", "xvideos", "xhamster", "redtube",
+    "onlyfans", "nsfw", "nude", "nudes", "naked", "sex", "sexy", "sexual",
+    "xxx", "hardcore", "blowjob", "handjob", "anal", "cumshot", "orgasm",
+    "masturbat", "hentai", "erotic", "erotica", "fetish", "bdsm", "rape",
+    "incest", "teen sex", "milf", "camgirl", "webcam sex", "live sex",
+    "sex chat", "hookup", "adult video", "adult content", "18+", "leaked nude",
+    "nude leak", "sextape", "sex tape", "pussy", "boobs", "tits", "penis",
+    "vagina", "striptease", "pornstar", "pornstarhub", "brazzers", "stripchat"
+  ],
+  "patterns": [
+    "(?:سکس|sex)[\\s\\-_.]*(?:فارسی|iran|irani)",
+    "(?:کانال|گروه|پیج)[\\s\\-_.]*(?:سکسی|جنسی|داغ|مستهجن|لخت)",
+    "(?:عکس|فیلم|ویدیو)[\\s\\-_.]*(?:سکس|جنسی|لخت|داغ|خصوصی)",
+    "(?:لینک|link)[\\s\\-_.]*(?:سکس|جنسی|داغ|ممنوعه)",
+    "(?:(?:18|17|19)[\\s]?\\+)",
+    "(?:x{2,}|xxx\\b)",
+    "(?:بدون|no)[\\s\\-_.]?(?:سانسور|censor)",
+    "(?:چت|chat)[\\s\\-_.]*(?:خصوصی|سکس|جنسی|داغ)"
+  ],
+  "file_name_patterns": [
+    "\\.xxx\\b",
+    "(?:porn|sex|nude|xxx|nsfw|hentai|brazzers|xvideos|phub)",
+    "(?:سکس|پورن|لخت|جنسی|داغ)"
+  ],
+  "suspicious_domains": [
+    "pornhub.com", "xvideos.com", "xnxx.com", "xhamster.com", "redtube.com",
+    "onlyfans.com", "stripchat.com", "chaturbate.com", "brazzers.com",
+    "youporn.com", "tnaflix.com", "porntube.com", "spankbang.com",
+    " nude.com", "motherless.com", "erome.com", "rule34.xxx", "sex.com"
+  ]
+}

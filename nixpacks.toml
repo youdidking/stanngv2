@@ -1,0 +1,4 @@
+# yt-dlp needs ffmpeg to combine Instagram DASH video and audio streams.
+# Preserve the auto-detected Python runtime and add ffmpeg to Railway's Nixpacks image.
+[phases.setup]
+nixPkgs = ["...", "ffmpeg"]

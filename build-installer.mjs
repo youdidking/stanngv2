@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import { gzipSync } from 'node:zlib';
+import { build, transform } from 'esbuild';
+const source=fs.readFileSync('worker-single-file.js');
+const hash=crypto.createHash('sha256').update(source).digest('hex');
+fs.mkdirSync('src/generated',{recursive:true});
+fs.writeFileSync('src/generated/installer-payload.js',`export const PAYLOAD=${JSON.stringify(gzipSync(source).toString('base64'))};export const SHA256=${JSON.stringify(hash)};`);
+const font='data:font/woff2;base64,'+fs.readFileSync(fs.existsSync('.arena/fonts/Vazirmatn-Regular.woff2')?'.arena/fonts/Vazirmatn-Regular.woff2':'src/ui/vendor/Vazirmatn-Regular.woff2').toString('base64');
+const css=(await transform(fs.readFileSync('src/installer-ui.css','utf8').replaceAll('{{FONT}}',font),{loader:'css',minify:true})).code;
+const js=(await transform(fs.readFileSync('src/installer-ui.js','utf8'),{loader:'js',minify:true,target:'es2022'})).code.replace(/<\/script/gi,'<\\/script');
+const html=fs.readFileSync('src/installer-ui.html','utf8').replace('{{STYLE}}',()=>css).replace('{{SCRIPT}}',()=>js).replace(/>\s+</g,'><');
+fs.writeFileSync('src/generated/installer-ui.js','export const INSTALLER_HTML='+JSON.stringify(html)+';');
+await build({entryPoints:['src/installer-entry.js'],outfile:'nightline-installer.js',bundle:true,format:'esm',target:'es2022',minify:true});
+console.log('Installer 2.5.3 built; embedded worker SHA256:',hash);
